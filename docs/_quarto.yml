@@ -1,0 +1,6 @@
+format:
+  html: {toc: true, toc-depth: 4}
+project: {type: book}
+book:
+  title: Clojure Tidy Tuesdays
+  chapters: [index.qmd, year_2024.week_1.analysis.qmd]

@@ -1,0 +1,32 @@
+
+---
+format:
+  html: {toc: true, toc-depth: 4, output-file: index.html}
+code-block-background: true
+include-in-header: {text: '<link rel = "icon" href = "data:," />'}
+
+---
+<style>.table {
+    overflow-y: scroll;
+}
+</style><style>.printedClojure .sourceCode {
+  background-color: transparent;
+  border-style: none;
+}
+</style>
+<script src="index_files/md-default0.js" type="text/javascript"></script><script src="index_files/md-default1.js" type="text/javascript"></script>
+
+<div class="sourceClojure">
+```clojure
+(ns index)
+```
+</div>
+
+
+
+# Welcome to Clojure Tidy Tuesdays!
+This is a collection of #TidyTuesday explorations in Clojure. Tidy tuesdays are an initiative of the R for data science online learning community, and as a Clojure enthusiast, I'm publishing implementations of the data-generation scripts and data explorations in Clojure here in 2024. Follow along to learn all about Clojure's rich data ecosystem!
+
+<div style="background-color:grey;height:2px;width:100%;"></div>
+
+<div><pre><small><small>source: <a href="https://github.com/kiramclean/clojure-tidy-tuesdays/blob/main/src/index.clj">src/index.clj</a></small></small></pre></div>
