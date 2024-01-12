@@ -47,8 +47,8 @@
     (hanami/plot ht/bar-chart {:X "num_votes"
                                :Y "primary_title"
                                :YTYPE "nominal"
-                               :XTITLE "Title"
-                               :YTITLE "Number of votes"
+                               :YTITLE "Title"
+                               :XTITLE "Number of votes"
                                :YSORT "-x"}))
 
 ;; ## Adding labels to the bar chart
@@ -63,8 +63,8 @@
                   :X "num_votes"
                   :Y "primary_title"
                   :YTYPE "nominal"
-                  :XTITLE "Title"
-                  :YTITLE "Number of votes"
+                  :YTITLE "Title"
+                  :XTITLE "Number of votes"
                   :YSORT "-x"
                   :WIDTH 500
                   :XSTACK nil
@@ -91,8 +91,8 @@
     (hanami/plot ht/bar-chart {:X "num_votes"
                                :Y "primary_title"
                                :YTYPE "nominal"
-                               :XTITLE "Title"
-                               :YTITLE "Number of votes"
+                               :YTITLE "Title"
+                               :XTITLE "Number of votes"
                                :YSORT "-x"
                                :COLOR "decade"}))
 
@@ -114,7 +114,7 @@
                   :field "data"
                   :case "upper"
                   :pattern "[\\w']{3,}"
-                  :stopwords "(the|a|i'm|like|too|into|ing|for|where|she|he|hers|his|how|who|what|your|yours|it|it's|is|are|we|'til|our|and|but|i'll|this|that)"
+                  :stopwords "(the|a|i'm|like|too|into|ing|for|where|she|he|hers|his|how|who|what|your|yours|it|it's|is|are|we|'til|our|and|but|i'll|this|that|from|with)"
                   }
                  {:type "formula",
                   :as "angle",
