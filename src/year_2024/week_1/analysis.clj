@@ -4,12 +4,14 @@
             [aerial.hanami.templates :as ht]
             [scicloj.kindly.v4.kind :as kind]))
 
-;; # Holiday Movies
+;; # Week 1 - Holiday Movies
 
 ;; In the interest of just getting started, this week I'll look at [a recent dataset from the 2023 tidy tuesday repo about holiday movies](https://github.com/rfordatascience/tidytuesday/tree/master/data/2023/2023-12-12), published by the R4DS community.
-;; For posterity, I've also saved the data in this repo, where it's available in the `data/year_2024/week_1/` folder.
+;; For posterity, I've also saved the data in this repo, where it's available in the [`data/year_2024/week_1/`](https://github.com/kiramclean/clojure-tidy-tuesdays/tree/main/data/year_2024/week_1) folder.
 
-;; For details about how the dataset was generated, see `src/year_2024/week_1/generate_dataset.clj`.
+;; For details about how the dataset was generated, see [`src/year_2024/week_1/generate_dataset.clj`](https://github.com/kiramclean/clojure-tidy-tuesdays/blob/main/data/year_2024/week_1/generate_dataset.clj).
+
+;; ## Making a bar chart
 
 ;; To get started, we'll load the data into our notebook, starting with the dataset of holiday movies:
 
@@ -48,6 +50,8 @@
                                :XTITLE "Title"
                                :YTITLE "Number of votes"
                                :YSORT "-x"}))
+
+;; ## Adding labels to the bar chart
 
 ;; In order to add the number of votes values next to the bars we'll have to rearrange some of the vega lite spec.. making this tidier and more intuitive is on the list of projects the Clojure data community is actively working on. I get that right now it requires too much information of vega-lite internals. Also it breaks the sorting and I don't know why yet..
 
@@ -92,7 +96,11 @@
                                :YSORT "-x"
                                :COLOR "decade"}))
 
-;; Without the bar labels, this is reasonably straightforward. The next graph in the article is a graph of relationships between the movie keywords. We don't have the keywords in our dataset, but we could do something with the words of the movie titles, like a word cloud, where the size of the word reflects its occurrence in the movie titles. First we'll collect all of the words in all the titles into a list, then use those as the data for the word cloud. This is a little more involved with low-level vega details than is ideal right now, but it's possible.
+;; Without the bar labels, this is reasonably straightforward.
+
+;; ## Making a word cloud
+
+;; The next graph in the article is a graph of relationships between the movie keywords. We don't have the keywords in our dataset, but we could do something with the words of the movie titles, like a word cloud, where the size of the word reflects its occurrence in the movie titles. First we'll collect all of the words in all the titles into a list, then use those as the data for the word cloud. This is a little more involved with low-level vega details than is ideal right now, but it's possible.
 
 (let [data (-> holiday-movies
                (tc/select-columns "primary_title")
