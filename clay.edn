@@ -4,4 +4,5 @@
                           :toc-depth 4}}
           :highlight-style :solarized
           :code-block-background true
+          :base-target-path "temp"
           :include-in-header {:text "<link rel = \"icon\" href = \"data:,\" />"}}}

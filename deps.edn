@@ -1,6 +1,7 @@
 {:paths ["data" "src" "env/dev/src"]
  :deps {org.clojure/clojure {:mvn/version "1.11.1"}
         scicloj/tablecloth {:mvn/version "7.007"}
-        org.scicloj/clay {:mvn/version "2-alpha62"}
+        org.scicloj/clay {:mvn/version "2-alpha63"}
         org.scicloj/noj {:mvn/version "1-alpha22"}
-        com.ibm.icu/icu4j {:mvn/version "74.2"}}}
+        com.ibm.icu/icu4j {:mvn/version "74.2"}
+        com.cnuernber/charred {:mvn/version "1.033"}}}

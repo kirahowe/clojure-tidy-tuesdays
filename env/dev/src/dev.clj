@@ -6,6 +6,7 @@
    {:format [:quarto :html]
     :book {:title "Clojure Tidy Tuesdays"}
     :base-source-path "src"
+    :base-target-path "docs"
     :subdirs-to-sync ["notebooks" "data"]
     :source-path ["index.clj"
                   "year_2024/week_1/analysis.clj"]}))
