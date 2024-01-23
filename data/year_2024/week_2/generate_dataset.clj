@@ -5,10 +5,10 @@
    [tablecloth.api :as tc])
   (:import java.time.Month))
 
-;; Week 2 Data - NHL Hockey Player Birthdates
+;; # Week 2 Data - NHL Hockey Player Birthdates
 
 ;; The data this week is about NHL hockey player birth dates. This code is mostly a "translation" into Clojure of the [data cleaning script from this week's Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2024/2024-01-09/readme.md#cleaning-script) from the R4DS online learning community. The idea is to show and explain how to gather data from different types of APIs in Clojure.
-
+;;
 ;; First we'll make a function to transform the headers of the data we'll fetch from the API. Keywords are better and more idiomatic to work with in Clojure (as opposed to strings), and this also kebab-cases the headers (also conventional in Clojure).
 
 (defn- kebab-cased-keyword [val]

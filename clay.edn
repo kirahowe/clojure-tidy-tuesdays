@@ -2,9 +2,11 @@
                :branch "main"}
  :quarto {:format {:html {:toc true
                           :toc-depth 4
-                          :theme "yeti"
+                          :theme {:light "yeti"
+                                  :dark "cyborg"}
                           :mainfont "-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif"
-                          :monofont "Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace"}}
+                          :monofont "Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace"
+                          :number-sections false}}
           :highlight-style "atom-one"
           :code-block-background true
           :base-target-path "temp"
