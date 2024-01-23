@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Clojure Tidy Tuesdays - 3&nbsp; Week 2 - Canadian NHL Hockey Player Birth Months</title>
+<title>Clojure Tidy Tuesdays - Week 2 - Canadian NHL Hockey Player Birth Months</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,10 +70,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -110,7 +112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./year_2024.week_2.analysis.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Week 2 - Canadian NHL Hockey Player Birth Months</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./year_2024.week_2.analysis.html"><span class="chapter-title">Week 2 - Canadian NHL Hockey Player Birth Months</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -126,6 +128,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Clojure Tidy Tuesdays</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -137,20 +142,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome to Clojure Tidy Tuesdays!</span></span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Welcome to Clojure Tidy Tuesdays!</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./year_2024.week_1.analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Week 1 - Holiday Movies</span></span></a>
+  <a href="./year_2024.week_1.analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 1 - Holiday Movies</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./year_2024.week_2.analysis.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Week 2 - Canadian NHL Hockey Player Birth Months</span></span></a>
+  <a href="./year_2024.week_2.analysis.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Week 2 - Canadian NHL Hockey Player Birth Months</span></a>
   </div>
 </li>
     </ul>
@@ -163,10 +165,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#canadian-birth-months" id="toc-canadian-birth-months" class="nav-link active" data-scroll-target="#canadian-birth-months"><span class="header-section-number">3.1</span> Canadian Birth Months</a></li>
-  <li><a href="#canadian-nhl-hockey-player-birth-months" id="toc-canadian-nhl-hockey-player-birth-months" class="nav-link" data-scroll-target="#canadian-nhl-hockey-player-birth-months"><span class="header-section-number">3.2</span> Canadian NHL Hockey Player Birth Months</a></li>
-  <li><a href="#comparing-all-canadian-births-to-canadian-nhl-player-births" id="toc-comparing-all-canadian-births-to-canadian-nhl-player-births" class="nav-link" data-scroll-target="#comparing-all-canadian-births-to-canadian-nhl-player-births"><span class="header-section-number">3.3</span> Comparing all Canadian births to Canadian NHL player births</a></li>
-  <li><a href="#chi-squared-test" id="toc-chi-squared-test" class="nav-link" data-scroll-target="#chi-squared-test"><span class="header-section-number">3.4</span> Chi-squared test</a></li>
+  <li><a href="#canadian-birth-months" id="toc-canadian-birth-months" class="nav-link active" data-scroll-target="#canadian-birth-months">Canadian Birth Months</a></li>
+  <li><a href="#canadian-nhl-hockey-player-birth-months" id="toc-canadian-nhl-hockey-player-birth-months" class="nav-link" data-scroll-target="#canadian-nhl-hockey-player-birth-months">Canadian NHL Hockey Player Birth Months</a></li>
+  <li><a href="#comparing-all-canadian-births-to-canadian-nhl-player-births" id="toc-comparing-all-canadian-births-to-canadian-nhl-player-births" class="nav-link" data-scroll-target="#comparing-all-canadian-births-to-canadian-nhl-player-births">Comparing all Canadian births to Canadian NHL player births</a></li>
+  <li><a href="#chi-squared-test" id="toc-chi-squared-test" class="nav-link" data-scroll-target="#chi-squared-test">Chi-squared test</a></li>
   </ul>
 </nav>
     </div>
@@ -175,7 +177,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Week 2 - Canadian NHL Hockey Player Birth Months</span></h1>
+<h1 class="title"><span class="chapter-title">Week 2 - Canadian NHL Hockey Player Birth Months</span></h1>
 </div>
 
 
@@ -213,8 +215,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>This is a fun one. For this week’s #tidytuesday adventure, we’re looking at Canadian NHL hockey player birth months. It’s no secret up here that hockey players are disproportionately born in the earlier months of the year. It’s anecdotally obvious to anyone who’s ever been on or around a hockey team. We’ll explore some data this week to see if the data backs up this observation, though.</p>
 <p>We’re mostly recreating the analysis done in <a href="https://jlaw.netlify.app/2023/12/04/are-birth-dates-still-destiny-for-canadian-nhl-players/">this great article on NHL player birth months</a>. The author makes a reasonable point that although it’s obvious (and I agree) to any Canadian that there are way more January-to-March birthdays on any hockey team, it’s not necessarily obvious whether this is expected or not. Basically by analysing this data we’re trying to explore the relationship between Canadian hockey player birth months and Canadian birth months in general. Are there just more Canadians born in the first months of the year for some reason? We’ll see!</p>
-<section id="canadian-birth-months" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="canadian-birth-months"><span class="header-section-number">3.1</span> Canadian Birth Months</h2>
+<section id="canadian-birth-months" class="level2">
+<h2 class="anchored" data-anchor-id="canadian-birth-months">Canadian Birth Months</h2>
 <p>The data for this analysis are gathered from the NHL API and StatsCan. There are a bunch of files saved in <a href="https://github.com/kiramclean/clojure-tidy-tuesdays/tree/main/data/year_2024/week_2"><code>data/year_2024/week_2</code></a> you can just use, or if you want to explore how the data is collected and cleaned up you can check out <a href="https://github.com/kiramclean/clojure-tidy-tuesdays/blob/main/data/year_2024/week_2/generate_dataset.clj"><code>data/year_2024/week_2/generate_dataset.clj</code></a>. We start with data on all Canadian births from 1991-2022 to see the distribution of Canadian births by month.</p>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb2"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>(<span class="bu">def</span><span class="fu"> canadian-births-by-month</span></span>
@@ -461,8 +463,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 <p>We can check the distribution for hockey players next.</p>
 </section>
-<section id="canadian-nhl-hockey-player-birth-months" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="canadian-nhl-hockey-player-birth-months"><span class="header-section-number">3.2</span> Canadian NHL Hockey Player Birth Months</h2>
+<section id="canadian-nhl-hockey-player-birth-months" class="level2">
+<h2 class="anchored" data-anchor-id="canadian-nhl-hockey-player-birth-months">Canadian NHL Hockey Player Birth Months</h2>
 <p>We have a dataset that includes player info for all NHL players over all time. We’ll start by doing a similar breakdown to the one we did above for all Canadians.</p>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb7"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>(<span class="bu">def</span><span class="fu"> nhl-player-births-by-month</span></span>
@@ -523,8 +525,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>These are definitely more distributed disproportionately through the early months of the year. We can compare them on top of each other to see more clearly next.</p>
 </section>
-<section id="comparing-all-canadian-births-to-canadian-nhl-player-births" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="comparing-all-canadian-births-to-canadian-nhl-player-births"><span class="header-section-number">3.3</span> Comparing all Canadian births to Canadian NHL player births</h2>
+<section id="comparing-all-canadian-births-to-canadian-nhl-player-births" class="level2">
+<h2 class="anchored" data-anchor-id="comparing-all-canadian-births-to-canadian-nhl-player-births">Comparing all Canadian births to Canadian NHL player births</h2>
 <p>We’ll simplify and combine the datasets first, before visualizing them:</p>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb9"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>(<span class="bu">def</span><span class="fu"> combined-births-by-month</span></span>
@@ -593,8 +595,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>When the data are all side-by-side like this we can see pretty clearly that it’s true that NHL players are in fact more likely to be born in the earlier parts of the year.</p>
 </section>
-<section id="chi-squared-test" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="chi-squared-test"><span class="header-section-number">3.4</span> Chi-squared test</h2>
+<section id="chi-squared-test" class="level2">
+<h2 class="anchored" data-anchor-id="chi-squared-test">Chi-squared test</h2>
 <p>The last thing the author of the original article does is a chi-squared test on the NHL player births distribution. A chi-squared test is one you can use to see whether a given variable follows a hypothesized distribution in a more quantitative way, so it’s basically a more stats-y way to show that the NHL player birth dates distribution is different than we would expect. I.e., it can answer, quantitatively, the question “what are the chances that a sample of birth dates would be distributed the way our NHL player birth dates dataset is, compared to the expected distribution?” In this case our “expected” distribution is based on the distribution by month of all Canadian births.</p>
 <p>In Clojure, this test is already implemented in the <a href="https://github.com/generateme/fastmath">fastmath</a> library, but in the interest of teaching (and because I already did it the hard way first before I learned how to use the fastmath function), we can just do it manually.</p>
 <p>First we compute the chi statistic. The formula is <span class="math display">\[\sum_{k=1}^{n}\frac{(O_k - E_k)^2}{E_k}\]</span> where O is the actual value and E is the expected one. We can implement this in Clojure. The first thing we need is the expected values. Our “actual” values are the count of NHL player births by month, so we can compute the expected ones by applying the expected distribution (based on the Canadian births data):</p>
@@ -770,6 +772,121 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -986,7 +1103,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./year_2024.week_1.analysis.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Week 1 - Holiday Movies</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Week 1 - Holiday Movies</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

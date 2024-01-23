@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Clojure Tidy Tuesdays - 2&nbsp; Week 1 - Holiday Movies</title>
+<title>Clojure Tidy Tuesdays - Week 1 - Holiday Movies</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,10 +71,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -109,7 +111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./year_2024.week_1.analysis.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Week 1 - Holiday Movies</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./year_2024.week_1.analysis.html"><span class="chapter-title">Week 1 - Holiday Movies</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -125,6 +127,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Clojure Tidy Tuesdays</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -136,20 +141,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome to Clojure Tidy Tuesdays!</span></span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Welcome to Clojure Tidy Tuesdays!</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./year_2024.week_1.analysis.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Week 1 - Holiday Movies</span></span></a>
+  <a href="./year_2024.week_1.analysis.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Week 1 - Holiday Movies</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./year_2024.week_2.analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Week 2 - Canadian NHL Hockey Player Birth Months</span></span></a>
+  <a href="./year_2024.week_2.analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 2 - Canadian NHL Hockey Player Birth Months</span></a>
   </div>
 </li>
     </ul>
@@ -162,9 +164,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#making-a-bar-chart" id="toc-making-a-bar-chart" class="nav-link active" data-scroll-target="#making-a-bar-chart"><span class="header-section-number">2.1</span> Making a bar chart</a></li>
-  <li><a href="#adding-labels-to-the-bar-chart" id="toc-adding-labels-to-the-bar-chart" class="nav-link" data-scroll-target="#adding-labels-to-the-bar-chart"><span class="header-section-number">2.2</span> Adding labels to the bar chart</a></li>
-  <li><a href="#making-a-word-cloud" id="toc-making-a-word-cloud" class="nav-link" data-scroll-target="#making-a-word-cloud"><span class="header-section-number">2.3</span> Making a word cloud</a></li>
+  <li><a href="#making-a-bar-chart" id="toc-making-a-bar-chart" class="nav-link active" data-scroll-target="#making-a-bar-chart">Making a bar chart</a></li>
+  <li><a href="#adding-labels-to-the-bar-chart" id="toc-adding-labels-to-the-bar-chart" class="nav-link" data-scroll-target="#adding-labels-to-the-bar-chart">Adding labels to the bar chart</a></li>
+  <li><a href="#making-a-word-cloud" id="toc-making-a-word-cloud" class="nav-link" data-scroll-target="#making-a-word-cloud">Making a word cloud</a></li>
   </ul>
 </nav>
     </div>
@@ -173,7 +175,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Week 1 - Holiday Movies</span></h1>
+<h1 class="title"><span class="chapter-title">Week 1 - Holiday Movies</span></h1>
 </div>
 
 
@@ -207,8 +209,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>            [scicloj.kindly.v4.kind <span class="at">:as</span> kind]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In the interest of just getting started, this week I’ll look at <a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2023/2023-12-12">a recent dataset from the 2023 tidy tuesday repo about holiday movies</a>, published by the R4DS community. For posterity, I’ve also saved the data in this repo, where it’s available in the <a href="https://github.com/kiramclean/clojure-tidy-tuesdays/tree/main/data/year_2024/week_1"><code>data/year_2024/week_1/</code></a> folder. For details about how the dataset was generated, see <a href="https://github.com/kiramclean/clojure-tidy-tuesdays/blob/main/data/year_2024/week_1/generate_dataset.clj"><code>src/year_2024/week_1/generate_dataset.clj</code></a>.</p>
-<section id="making-a-bar-chart" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="making-a-bar-chart"><span class="header-section-number">2.1</span> Making a bar chart</h2>
+<section id="making-a-bar-chart" class="level2">
+<h2 class="anchored" data-anchor-id="making-a-bar-chart">Making a bar chart</h2>
 <p>To get started, we’ll load the data into our notebook, starting with the dataset of holiday movies:</p>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb2"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>(<span class="bu">def</span><span class="fu"> holiday-movies</span></span>
@@ -261,8 +263,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="adding-labels-to-the-bar-chart" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="adding-labels-to-the-bar-chart"><span class="header-section-number">2.2</span> Adding labels to the bar chart</h2>
+<section id="adding-labels-to-the-bar-chart" class="level2">
+<h2 class="anchored" data-anchor-id="adding-labels-to-the-bar-chart">Adding labels to the bar chart</h2>
 <p>In order to add the number of votes values next to the bars we’ll have to rearrange some of the vega lite spec.. making this tidier and more intuitive is on the list of projects the Clojure data community is actively working on. I get that right now it requires too much information of vega-lite internals. Also it breaks the sorting and I don’t know why yet..</p>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb6"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> holiday-movies</span>
@@ -316,8 +318,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Without the bar labels, this is reasonably straightforward.</p>
 </section>
-<section id="making-a-word-cloud" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="making-a-word-cloud"><span class="header-section-number">2.3</span> Making a word cloud</h2>
+<section id="making-a-word-cloud" class="level2">
+<h2 class="anchored" data-anchor-id="making-a-word-cloud">Making a word cloud</h2>
 <p>The next graph in the article is a graph of relationships between the movie keywords. We don’t have the keywords in our dataset, but we could do something with the words of the movie titles, like a word cloud, where the size of the word reflects its occurrence in the movie titles. First we’ll collect all of the words in all the titles into a list, then use those as the data for the word cloud. This is a little more involved with low-level vega details than is ideal right now, but it’s possible.</p>
 <div class="sourceClojure">
 <div class="sourceCode" id="cb8"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">let</span> [data (<span class="kw">-&gt;</span> holiday-movies</span>
@@ -407,6 +409,121 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -623,12 +740,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome to Clojure Tidy Tuesdays!</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Welcome to Clojure Tidy Tuesdays!</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./year_2024.week_2.analysis.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Week 2 - Canadian NHL Hockey Player Birth Months</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-title">Week 2 - Canadian NHL Hockey Player Birth Months</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
