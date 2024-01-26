@@ -10,5 +10,4 @@
           :highlight-style "atom-one"
           :code-block-background true
           :base-target-path "temp"
-          :include-in-header {:text "<link rel = \"icon\" href = \"data:,\" />\n<script async data-id=\"101441272\" src=\"//static.getclicky.com/js\"></script>"}
-          }}
+          :include-in-header {:text "<link rel = \"icon\" href = \"data:,\" />\n<script async data-id=\"101441463\" src=\"//static.getclicky.com/js\"></script>"}}}
