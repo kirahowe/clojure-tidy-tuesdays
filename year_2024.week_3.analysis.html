@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.549">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Clojure Tidy Tuesdays - Week 3 - US Polling Places 2012-2020</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./year_2024.week_2.analysis.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link rel="icon" href="data:,">
+<script async="" data-id="101441463" src="//static.getclicky.com/js"></script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./year_2024.week_3.analysis.html"><span class="chapter-title">Week 3 - US Polling Places 2012-2020</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Clojure Tidy Tuesdays</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Welcome to Clojure Tidy Tuesdays!</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./year_2024.week_1.analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 1 - Holiday Movies</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./year_2024.week_2.analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 2 - Canadian NHL Hockey Player Birth Months</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./year_2024.week_3.analysis.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Week 3 - US Polling Places 2012-2020</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#polling-location-counts-over-time" id="toc-polling-location-counts-over-time" class="nav-link active" data-scroll-target="#polling-location-counts-over-time">Polling location counts over time</a></li>
+  <li><a href="#faceting-polling-places-over-time-graph" id="toc-faceting-polling-places-over-time-graph" class="nav-link" data-scroll-target="#faceting-polling-places-over-time-graph">Faceting polling places over time graph</a></li>
+  <li><a href="#relative-changes-in-polling-places-by-state" id="toc-relative-changes-in-polling-places-by-state" class="nav-link" data-scroll-target="#relative-changes-in-polling-places-by-state">Relative changes in polling places by state</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Week 3 - US Polling Places 2012-2020</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<style></style>
+<style>.printedClojure .sourceCode {
+  background-color: transparent;
+  border-style: none;
+}
+</style>
+<script src="year_2024.week_3.analysis_files/md-default2.js" type="text/javascript"></script>
+<script src="year_2024.week_3.analysis_files/md-default3.js" type="text/javascript"></script>
+<script src="year_2024.week_3.analysis_files/vega4.js" type="text/javascript"></script>
+<script src="year_2024.week_3.analysis_files/vega5.js" type="text/javascript"></script>
+<script src="year_2024.week_3.analysis_files/vega6.js" type="text/javascript"></script>
+<div class="sourceClojure">
+<div class="sourceCode" id="cb1"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">ns</span> year<span class="fl">-2024.</span>week<span class="fl">-3.</span>analysis</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  (<span class="at">:require</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>   [aerial.hanami.common <span class="at">:as</span> hc]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>   [aerial.hanami.templates <span class="at">:as</span> ht]</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>   [scicloj.noj.v1.vis.hanami <span class="at">:as</span> hanami]</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>   [tablecloth.api <span class="at">:as</span> tc]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This week’s data is about US polling places from 2012-2020. It’s a super interesting dataset, assembled by <a href="https://publicintegrity.org/politics/elections/ballotboxbarriers/data-release-sheds-light-on-past-polling-place-changes/">The Center for Public Integrity and Stateline</a>. The example article for the week has a really cool dataviz that uses some voter demographic data overlaid on the polling place data. For us without the extra demographic data, we can at least just poke around the polling places dataset to answer some basic questions. Like the one proposed in the tidy Tuesday repo this week: For states with data for multiple elections, how have polling location counts per county changed over time? Or, what are the most common types of polling places and how have they changed over time?</p>
+<section id="polling-location-counts-over-time" class="level2">
+<h2 class="anchored" data-anchor-id="polling-location-counts-over-time">Polling location counts over time</h2>
+<p>In order to see which states have had the largest shifts in polling location counts over time, we can group the data by election date and state and then count the number of rows in each group:</p>
+<div class="sourceClojure">
+<div class="sourceCode" id="cb2"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>(<span class="bu">def</span><span class="fu"> all-polling-locations</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">-&gt;</span> <span class="st">"data/year_2024/week_3/polling-places.csv"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>      (tc/dataset {<span class="at">:key-fn</span> <span class="kw">keyword</span>})))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="sourceClojure">
+<div class="sourceCode" id="cb3"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> all-polling-locations</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    (tc/group-by [<span class="at">:election</span>_date <span class="at">:state</span>])</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    (tc/aggregate {<span class="at">:count</span> tc/row-count}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>_unnamed [161 3]:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>:election_date</th>
+<th>:state</th>
+<th style="text-align: right;">:count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2020-11-03</td>
+<td>AL</td>
+<td style="text-align: right;">2075</td>
+</tr>
+<tr class="even">
+<td>2012-11-06</td>
+<td>AK</td>
+<td style="text-align: right;">396</td>
+</tr>
+<tr class="odd">
+<td>2014-11-04</td>
+<td>AK</td>
+<td style="text-align: right;">396</td>
+</tr>
+<tr class="even">
+<td>2016-11-08</td>
+<td>AK</td>
+<td style="text-align: right;">396</td>
+</tr>
+<tr class="odd">
+<td>2018-11-06</td>
+<td>AK</td>
+<td style="text-align: right;">396</td>
+</tr>
+<tr class="even">
+<td>2020-11-03</td>
+<td>AK</td>
+<td style="text-align: right;">441</td>
+</tr>
+<tr class="odd">
+<td>2012-11-06</td>
+<td>AR</td>
+<td style="text-align: right;">2536</td>
+</tr>
+<tr class="even">
+<td>2014-11-04</td>
+<td>AR</td>
+<td style="text-align: right;">2972</td>
+</tr>
+<tr class="odd">
+<td>2018-11-06</td>
+<td>AR</td>
+<td style="text-align: right;">8980</td>
+</tr>
+<tr class="even">
+<td>2020-11-03</td>
+<td>AR</td>
+<td style="text-align: right;">967</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+<td style="text-align: right;">…</td>
+</tr>
+<tr class="even">
+<td>2020-11-03</td>
+<td>VA</td>
+<td style="text-align: right;">2485</td>
+</tr>
+<tr class="odd">
+<td>2012-11-06</td>
+<td>WV</td>
+<td style="text-align: right;">1860</td>
+</tr>
+<tr class="even">
+<td>2014-11-04</td>
+<td>WV</td>
+<td style="text-align: right;">1816</td>
+</tr>
+<tr class="odd">
+<td>2016-11-08</td>
+<td>WV</td>
+<td style="text-align: right;">1759</td>
+</tr>
+<tr class="even">
+<td>2018-11-06</td>
+<td>WV</td>
+<td style="text-align: right;">1759</td>
+</tr>
+<tr class="odd">
+<td>2020-11-03</td>
+<td>WV</td>
+<td style="text-align: right;">1729</td>
+</tr>
+<tr class="even">
+<td>2012-11-06</td>
+<td>WI</td>
+<td style="text-align: right;">6587</td>
+</tr>
+<tr class="odd">
+<td>2014-11-04</td>
+<td>WI</td>
+<td style="text-align: right;">6765</td>
+</tr>
+<tr class="even">
+<td>2016-11-08</td>
+<td>WI</td>
+<td style="text-align: right;">6865</td>
+</tr>
+<tr class="odd">
+<td>2018-11-06</td>
+<td>WI</td>
+<td style="text-align: right;">6995</td>
+</tr>
+<tr class="even">
+<td>2020-11-03</td>
+<td>WI</td>
+<td style="text-align: right;">7092</td>
+</tr>
+</tbody>
+</table>
+<p>We can plot this data to get a glimpse of how the count of polling places per state has changed over time:</p>
+<div class="sourceClojure">
+<div class="sourceCode" id="cb4"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> all-polling-locations</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    (tc/group-by [<span class="at">:election</span>_date <span class="at">:state</span>])</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    (tc/aggregate {<span class="at">:count</span> tc/row-count})</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    (hanami/plot ht/line-chart</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                 {<span class="at">:X</span> <span class="at">:election</span>_date</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:XTYPE</span> <span class="at">:temporal</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:Y</span> <span class="at">:count</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:COLOR</span> {<span class="at">:field</span> <span class="st">"state"</span> <span class="at">:type</span> <span class="st">"nominal"</span>}}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div style="max-height:600px;overflow-y:auto;">
+<div>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"count","type":"quantitative"},"color":{"field":"state","type":"nominal"},"x":{"field":"election_date","type":"temporal"}},"mark":{"type":"line","tooltip":true},"width":400,"background":"floralwhite","height":300,"data":{"url":"year_2024.week_3.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
+</div>
+</div>
+<p>To make this chart easier to interpret, we’ll change a few things, noted inline below:</p>
+<div class="sourceClojure">
+<div class="sourceCode" id="cb5"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> all-polling-locations</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    (tc/group-by [<span class="at">:election</span>_date <span class="at">:state</span>])</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    (tc/aggregate {<span class="at">:count</span> tc/row-count})</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    (hanami/plot (<span class="kw">-&gt;</span> ht/line-chart</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                     (<span class="kw">assoc-in</span> [<span class="at">:mark</span> <span class="at">:strokeWidth</span>] <span class="at">:MSWIDTH</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>                     (<span class="kw">assoc-in</span> [<span class="at">:mark</span> <span class="at">:opacity</span>] <span class="at">:MOPACITY</span>))</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>                 {<span class="at">:X</span> <span class="at">:election</span>_date</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:XTYPE</span> <span class="at">:temporal</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:Y</span> <span class="at">:count</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>                  <span class="co">;; make the whole chart wider</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:WIDTH</span> <span class="dv">700</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>                  <span class="co">;; make the line widths slightly bigger and more transparent</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:MSWIDTH</span> <span class="dv">4</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:MOPACITY</span> <span class="fl">0.5</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:COLOR</span> {<span class="at">:field</span> <span class="st">"state"</span> <span class="at">:type</span> <span class="st">"nominal"</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>                          <span class="co">;; get rid of the legend</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>                          <span class="at">:legend</span> <span class="va">nil</span>}</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>                  <span class="co">;; replace the legend with tooltips, to see the state when hovering over a point</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:MTOOLTIP</span> <span class="va">true</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>                  <span class="co">;; change the y-axis to a logarithmic scale to make it easier to interpret the</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>                  <span class="co">;; wide range of counts</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:YSCALE</span> {<span class="at">:type</span> <span class="st">"log"</span>}}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div style="max-height:600px;overflow-y:auto;">
+<div>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"scale":{"type":"log"},"field":"count","type":"quantitative"},"color":{"field":"state","type":"nominal","legend":null},"x":{"field":"election_date","type":"temporal"}},"mark":{"type":"line","strokeWidth":4,"opacity":0.5,"tooltip":true},"width":700,"background":"floralwhite","height":300,"data":{"url":"year_2024.week_3.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
+</div>
+</div>
+<p>Even this doesn’t really tell us much, other than that most states saw no change in the overall number of polling places over the years (lots of straight lines!). To get a better idea of how the states compare to each other, we can facet this graph by state.</p>
+</section>
+<section id="faceting-polling-places-over-time-graph" class="level2">
+<h2 class="anchored" data-anchor-id="faceting-polling-places-over-time-graph">Faceting polling places over time graph</h2>
+<div class="sourceClojure">
+<div class="sourceCode" id="cb6"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> all-polling-locations</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    (tc/group-by [<span class="at">:election</span>_date <span class="at">:state</span>])</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    (tc/aggregate {<span class="at">:count</span> tc/row-count})</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">;; this is pretty messy -- for now we have to manually cobble together</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">;; the plot specifications in this way, but optimizing these to make</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">;; them more ergonomic is high on the priority list</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    (hanami/plot (<span class="kw">-&gt;</span> ht/line-chart</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>                     (<span class="kw">assoc</span> <span class="at">:encoding</span> (<span class="kw">assoc</span> (hc/get-default <span class="at">:ENCODING</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>                                             <span class="at">:facet</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>                                             <span class="at">:FACET</span>)))</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>                 {<span class="at">:X</span> <span class="at">:election</span>_date</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:XTITLE</span> <span class="st">"Year"</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:XGRID</span> <span class="va">false</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:XTYPE</span> <span class="at">:temporal</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:Y</span> <span class="at">:count</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:YTITLE</span> <span class="st">"Count"</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:YGRID</span> <span class="va">false</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:HEIGHT</span> <span class="dv">50</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:WIDTH</span> <span class="dv">80</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:COLOR</span> {<span class="at">:field</span> <span class="at">:state</span> <span class="at">:type</span> <span class="at">:nominal</span> <span class="at">:legend</span> <span class="va">false</span>}</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:FACET</span> {<span class="at">:field</span> <span class="at">:state</span> <span class="at">:type</span> <span class="at">:nominal</span> <span class="at">:columns</span> <span class="dv">7</span> <span class="at">:title</span> <span class="st">"State"</span>}}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div style="max-height:600px;overflow-y:auto;">
+<div>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"count","type":"quantitative","axis":{"title":"Count","grid":false}},"color":{"field":"state","type":"nominal","legend":false},"facet":{"field":"state","type":"nominal","columns":7,"title":"State"},"x":{"field":"election_date","type":"temporal","axis":{"title":"Year","grid":false}}},"mark":{"type":"line","tooltip":true},"width":80,"background":"floralwhite","height":50,"data":{"url":"year_2024.week_3.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
+</div>
+</div>
+<p>This is still not super informative (IMO), but better. We can at least clearly see the outliers that did see some change over time, i.e.&nbsp;AR, MD, MN. It also reveals states that have no or little data.</p>
+</section>
+<section id="relative-changes-in-polling-places-by-state" class="level2">
+<h2 class="anchored" data-anchor-id="relative-changes-in-polling-places-by-state">Relative changes in polling places by state</h2>
+<p>Next we can try to visualize the relative changes in polling station counts between two years. We can check out which states have data first and see that it probably doesn’t matter much which two years we choose:</p>
+<div class="sourceClojure">
+<div class="sourceCode" id="cb7"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> all-polling-locations</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    (tc/select-columns [<span class="at">:election</span>_date <span class="at">:state</span>])</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    (tc/unique-by [<span class="at">:election</span>_date <span class="at">:state</span>])</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    (tc/fold-by [<span class="at">:election</span>_date])</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    (tc/update-columns {<span class="at">:state</span> (<span class="kw">partial</span> <span class="kw">map</span> <span class="kw">count</span>)})</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    (tc/order-by <span class="at">:election</span>_date))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>_unnamed [7 2]:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>:election_date</th>
+<th style="text-align: right;">:state</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2012-11-06</td>
+<td style="text-align: right;">30</td>
+</tr>
+<tr class="even">
+<td>2014-11-04</td>
+<td style="text-align: right;">32</td>
+</tr>
+<tr class="odd">
+<td>2016-02-09</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td>2016-09-13</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td>2016-11-08</td>
+<td style="text-align: right;">30</td>
+</tr>
+<tr class="even">
+<td>2018-11-06</td>
+<td style="text-align: right;">32</td>
+</tr>
+<tr class="odd">
+<td>2020-11-03</td>
+<td style="text-align: right;">35</td>
+</tr>
+</tbody>
+</table>
+<p>No year has as many states with data as the most recent year, so for the sake of this comparison we’ll compute the differences in polling station counts between the first and last years. We can do this by “folding” our dataset up by state, rolling up all the rows that share a state into one list:</p>
+<div class="sourceClojure">
+<div class="sourceCode" id="cb8"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> all-polling-locations</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">;; first we'll group all the data by election date and state to</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">;; get our dataset of polling place counts by date and state</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    (tc/group-by [<span class="at">:election</span>_date <span class="at">:state</span>])</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    (tc/aggregate {<span class="at">:count</span> tc/row-count})</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">;; we'll select only the rows from 2012 and 2020 so we can</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">;; compare just those two counts</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    (tc/select-rows (<span class="kw">fn</span> [row]</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>                      (<span class="kw">let</span> [year (<span class="kw">-&gt;</span> row <span class="at">:election</span>_date .getYear)]</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>                        (<span class="kw">or</span> (<span class="kw">=</span> <span class="dv">2012</span> year) (<span class="kw">=</span> <span class="dv">2020</span> year)))))</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">;; sort this dataset by election date</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    (tc/order-by [<span class="at">:election</span>_date])</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="co">;; roll up the dates and counts by state</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    (tc/fold-by [<span class="at">:state</span>])</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="co">;; select only rows that have data for both elections</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    (tc/select-rows #(<span class="kw">=</span> <span class="dv">2</span> (<span class="kw">count</span> (<span class="at">:count</span> <span class="va">%</span>))))</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    <span class="co">;; now we can compute the difference between the 2012 and 2020</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    <span class="co">;; counts -- we'll compute this as a relative difference (i.e.</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    <span class="co">;; relative to the 2012 value), for the sake of comparison, so</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    <span class="co">;; that we can get a sense of how states compare to each other</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    <span class="co">;; despite the large discrepancies in absolute numbers of polling places</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    (tc/map-columns <span class="at">:difference</span> [<span class="at">:count</span>] (<span class="kw">fn</span> [[c2012 c2020]]</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>                                           (<span class="kw">/</span> (<span class="kw">-</span> c2020 c2012)</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>                                              c2012)))</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>    <span class="co">;; for the sake of seeing the relative differences in counts we only</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>    <span class="co">;; care about the state and our new computed column</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>    (tc/select-columns [<span class="at">:state</span> <span class="at">:difference</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>_unnamed [26 2]:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>:state</th>
+<th>:difference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CT</td>
+<td>-0.03364</td>
+</tr>
+<tr class="even">
+<td>NH</td>
+<td>0.08654</td>
+</tr>
+<tr class="odd">
+<td>ME</td>
+<td>0.08621</td>
+</tr>
+<tr class="even">
+<td>IL</td>
+<td>-0.1534</td>
+</tr>
+<tr class="odd">
+<td>NC</td>
+<td>-0.03411</td>
+</tr>
+<tr class="even">
+<td>MD</td>
+<td>-0.8340</td>
+</tr>
+<tr class="odd">
+<td>ND</td>
+<td>0.5938</td>
+</tr>
+<tr class="even">
+<td>AK</td>
+<td>0.1136</td>
+</tr>
+<tr class="odd">
+<td>OH</td>
+<td>-0.04132</td>
+</tr>
+<tr class="even">
+<td>MA</td>
+<td>-0.0009195</td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td>DE</td>
+<td>0.004630</td>
+</tr>
+<tr class="odd">
+<td>SC</td>
+<td>0.05645</td>
+</tr>
+<tr class="even">
+<td>IA</td>
+<td>-0.004147</td>
+</tr>
+<tr class="odd">
+<td>AR</td>
+<td>-0.6187</td>
+</tr>
+<tr class="even">
+<td>VT</td>
+<td>-0.01509</td>
+</tr>
+<tr class="odd">
+<td>MT</td>
+<td>-0.1501</td>
+</tr>
+<tr class="even">
+<td>VA</td>
+<td>0.02771</td>
+</tr>
+<tr class="odd">
+<td>WV</td>
+<td>-0.07043</td>
+</tr>
+<tr class="even">
+<td>NE</td>
+<td>-0.1409</td>
+</tr>
+<tr class="odd">
+<td>WI</td>
+<td>0.07667</td>
+</tr>
+<tr class="even">
+<td>LA</td>
+<td>-0.07847</td>
+</tr>
+</tbody>
+</table>
+<p>Now we can see quantitatively what the visualizations above seemed to show – most states saw not much change in the number of polling stations. We can visualize this data as a bar chart and see the outliers pretty clearly:</p>
+<div class="sourceClojure">
+<div class="sourceCode" id="cb9"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> all-polling-locations</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    (tc/group-by [<span class="at">:election</span>_date <span class="at">:state</span>])</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    (tc/aggregate {<span class="at">:count</span> tc/row-count})</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    (tc/select-rows (<span class="kw">fn</span> [row]</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>                      (<span class="kw">let</span> [year (<span class="kw">-&gt;</span> row <span class="at">:election</span>_date .getYear)]</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>                        (<span class="kw">or</span> (<span class="kw">=</span> <span class="dv">2012</span> year) (<span class="kw">=</span> <span class="dv">2020</span> year)))))</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    (tc/order-by [<span class="at">:election</span>_date])</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    (tc/fold-by [<span class="at">:state</span>])</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    (tc/select-rows #(<span class="kw">=</span> <span class="dv">2</span> (<span class="kw">count</span> (<span class="at">:count</span> <span class="va">%</span>))))</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    (tc/map-columns <span class="at">:difference</span> [<span class="at">:count</span>] (<span class="kw">fn</span> [[c2012 c2020]]</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>                                           (<span class="kw">-&gt;</span> c2020</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>                                               (<span class="kw">-</span> c2012)</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>                                               (<span class="kw">/</span> c2012)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>                                               <span class="kw">double</span>)))</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    (hanami/plot (<span class="kw">assoc</span> ht/layer-chart <span class="at">:encoding</span> <span class="at">:ENCODING</span>)</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>                 {<span class="at">:X</span> <span class="at">:difference</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:XAXIS</span> {<span class="at">:domain</span> <span class="va">false</span> <span class="at">:format</span> <span class="st">"1%"</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>                          <span class="at">:title</span> <span class="st">"Change in polling place count 2012-2020"</span>}</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:YSORT</span> <span class="st">"-x"</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:Y</span> <span class="at">:state</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:YTYPE</span> <span class="st">"nominal"</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:YTITLE</span> <span class="st">"State"</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:LAYER</span> [{<span class="at">:mark</span> <span class="st">"bar"</span>}</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>                          {<span class="at">:mark</span> {<span class="at">:type</span> <span class="st">"text"</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">:align</span> {<span class="at">:expr</span> <span class="st">"datum.difference &lt; 0 ? 'right' : 'left'"</span>}</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">:dx</span> {<span class="at">:expr</span> <span class="st">"datum.difference &lt; 0 ? -2 : 2"</span>}</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>                                  }</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>                           <span class="at">:encoding</span> {<span class="at">:text</span> {<span class="at">:field</span> <span class="at">:difference</span></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>                                             <span class="at">:format</span> <span class="st">".1%"</span>}}}]}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div style="max-height:600px;overflow-y:auto;">
+<div>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"state","type":"nominal","axis":{"title":"State"},"sort":"-x"},"x":{"field":"difference","type":"quantitative","axis":{"domain":false,"format":"1%","title":"Change in polling place count 2012-2020"}}},"width":400,"background":"floralwhite","layer":[{"mark":"bar"},{"mark":{"type":"text","align":{"expr":"datum.difference < 0 ? 'right' : 'left'"},"dx":{"expr":"datum.difference < 0 ? -2 : 2"}},"encoding":{"text":{"field":"difference","format":".1%"}}}],"height":300,"data":{"url":"year_2024.week_3.analysis_files\/1.csv","format":{"type":"csv"}}});</script>
+</div>
+</div>
+<p>There we have it! An interesting investigation of some data on polling places. See you next week :)</p>
+<div style="background-color:grey;height:2px;width:100%;">
+
+</div>
+<div>
+<pre><small><small>source: <a href="https://github.com/kiramclean/clojure-tidy-tuesdays/blob/main/src/year_2024/week_3/analysis.clj">src/year_2024/week_3/analysis.clj</a></small></small></pre>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a 2="" href="./year_2024.week_2.analysis.html" class="pagination-link  aria-label=" &lt;span="" -="" canadian="" nhl="" hockey="" player="" birth="" months&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Week 2 - Canadian NHL Hockey Player Birth Months</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
