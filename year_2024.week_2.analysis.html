@@ -196,6 +196,11 @@ window.Quarto = {
   <a href="./year_2024.week_3.analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 3 - US Polling Places 2012-2020</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./year_2024.week_4.analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 4 - Educational attainment of young people in English towns</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -374,10 +379,8 @@ window.Quarto = {
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>                          {<span class="at">:mark</span> {<span class="at">:type</span> <span class="st">"text"</span> <span class="at">:align</span> <span class="st">"left"</span> <span class="at">:dx</span> <span class="dv">3</span>}</span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>                           <span class="at">:encoding</span> {<span class="at">:text</span> {<span class="at">:field</span> <span class="at">:country-pct</span> <span class="at">:format</span> <span class="st">".1%"</span>}}}]}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div style="max-height:600px;overflow-y:auto;">
 <div>
 <script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"month","type":"nominal","axis":{"title":"Month"},"sort":["1","2","3","4","5","6","7","8","9","10","11","12"]},"x":{"field":"country-births","type":"quantitative","axis":{"title":"Number of births (cumulatively)"}}},"width":400,"background":"floralwhite","title":{"text":"Canadian births by month 1991-2022"},"layer":[{"mark":"bar"},{"mark":{"type":"text","align":"left","dx":3},"encoding":{"text":{"field":"country-pct","format":".1%"}}}],"height":300,"data":{"url":"year_2024.week_2.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
-</div>
 </div>
 <p>So now we can see the distribution of births in Canada by month between 1991 and 2022. It actually looks like Canadians are less likely to be born in the earlier months of the year, with the most births in May, July, August, and September. We can compare this to the expected distribution (if each day had an exactly equal chance of being someone’s birthday) by first constructing a dataset of the “expected” monthly distributions:</p>
 <div class="sourceClojure">
@@ -561,10 +564,8 @@ window.Quarto = {
 <span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>                       <span class="at">:encoding</span> {<span class="at">:text</span> {<span class="at">:field</span> <span class="at">:player-pct</span></span>
 <span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">:format</span> <span class="st">".1%"</span>}}}]})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div style="max-height:600px;overflow-y:auto;">
 <div>
 <script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"birth-month","type":"nominal","axis":{"title":"Month"},"sort":["JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE","JULY","AUGUST","SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER"]},"x":{"field":"births","type":"quantitative","axis":{"title":"Number of births"}}},"width":400,"background":"floralwhite","title":{"text":"NHL player births by month"},"layer":[{"mark":"bar"},{"mark":{"type":"text","align":"left","dx":3},"encoding":{"text":{"field":"player-pct","format":".1%"}}}],"height":300,"data":{"url":"year_2024.week_2.analysis_files\/1.csv","format":{"type":"csv"}}});</script>
-</div>
 </div>
 <p>These are definitely more distributed disproportionately through the early months of the year. We can compare them on top of each other to see more clearly next.</p>
 </section>
@@ -631,10 +632,8 @@ window.Quarto = {
 <span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">:yOffset</span> {<span class="at">:datum</span> {<span class="at">:repeat</span> <span class="st">"layer"</span>}}}}]}}</span>
 <span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>             {})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div style="max-height:600px;overflow-y:auto;">
 <div>
 <script>vegaEmbed(document.currentScript.parentElement, {"data":{"url":"year_2024.week_2.analysis_files\/2.csv","format":{"type":"csv"}},"repeat":{"layer":["expected-births-pct","country-pct","player-pct"]},"spec":{"encoding":{"y":{"field":"month","type":"nominal","axis":{"title":"Month"},"sort":["January","February","March","April","May","June","July","August","September","October","November","December"]}},"layer":[{"mark":"bar","height":{"step":"12"},"encoding":{"x":{"field":{"repeat":"layer"},"type":"quantitative","axis":{"title":"Percentage of births","format":".0%"}},"color":{"datum":{"repeat":"layer"},"type":"nominal","scale":{"range":["steelblue","red","black"]},"legend":{"title":"Group","labelExpr":"{'country-pct': 'Canada', 'player-pct': 'NHL Players', 'expected-births-pct': 'Expected'}[datum.label]"}},"yOffset":{"datum":{"repeat":"layer"}}}},{"mark":{"type":"text","dx":-80,"fontSize":10.5},"encoding":{"text":{"field":{"repeat":"layer"},"format":".1%"},"color":{"value":"white"},"yOffset":{"datum":{"repeat":"layer"}}}}]}});</script>
-</div>
 </div>
 <p>When the data are all side-by-side like this we can see pretty clearly that it’s true that NHL players are in fact more likely to be born in the earlier parts of the year.</p>
 </section>

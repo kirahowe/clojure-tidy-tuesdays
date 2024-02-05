@@ -64,6 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./year_2024.week_4.analysis.html" rel="next">
 <link href="./year_2024.week_2.analysis.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -164,6 +165,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./year_2024.week_3.analysis.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Week 3 - US Polling Places 2012-2020</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./year_2024.week_4.analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 4 - Educational attainment of young people in English towns</span></a>
   </div>
 </li>
     </ul>
@@ -370,10 +376,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:Y</span> <span class="at">:count</span></span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:COLOR</span> {<span class="at">:field</span> <span class="st">"state"</span> <span class="at">:type</span> <span class="st">"nominal"</span>}}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div style="max-height:600px;overflow-y:auto;">
 <div>
 <script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"count","type":"quantitative"},"color":{"field":"state","type":"nominal"},"x":{"field":"election_date","type":"temporal"}},"mark":{"type":"line","tooltip":true},"width":400,"background":"floralwhite","height":300,"data":{"url":"year_2024.week_3.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
-</div>
 </div>
 <p>To make this chart easier to interpret, we’ll change a few things, noted inline below:</p>
 <div class="sourceClojure">
@@ -400,10 +404,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>                  <span class="co">;; wide range of counts</span></span>
 <span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:YSCALE</span> {<span class="at">:type</span> <span class="st">"log"</span>}}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div style="max-height:600px;overflow-y:auto;">
 <div>
 <script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"scale":{"type":"log"},"field":"count","type":"quantitative"},"color":{"field":"state","type":"nominal","legend":null},"x":{"field":"election_date","type":"temporal"}},"mark":{"type":"line","strokeWidth":4,"opacity":0.5,"tooltip":true},"width":700,"background":"floralwhite","height":300,"data":{"url":"year_2024.week_3.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
-</div>
 </div>
 <p>Even this doesn’t really tell us much, other than that most states saw no change in the overall number of polling places over the years (lots of straight lines!). To get a better idea of how the states compare to each other, we can facet this graph by state.</p>
 </section>
@@ -432,10 +434,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:COLOR</span> {<span class="at">:field</span> <span class="at">:state</span> <span class="at">:type</span> <span class="at">:nominal</span> <span class="at">:legend</span> <span class="va">false</span>}</span>
 <span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:FACET</span> {<span class="at">:field</span> <span class="at">:state</span> <span class="at">:type</span> <span class="at">:nominal</span> <span class="at">:columns</span> <span class="dv">7</span> <span class="at">:title</span> <span class="st">"State"</span>}}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div style="max-height:600px;overflow-y:auto;">
 <div>
 <script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"count","type":"quantitative","axis":{"title":"Count","grid":false}},"color":{"field":"state","type":"nominal","legend":false},"facet":{"field":"state","type":"nominal","columns":7,"title":"State"},"x":{"field":"election_date","type":"temporal","axis":{"title":"Year","grid":false}}},"mark":{"type":"line","tooltip":true},"width":80,"background":"floralwhite","height":50,"data":{"url":"year_2024.week_3.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
-</div>
 </div>
 <p>This is still not super informative (IMO), but better. We can at least clearly see the outliers that did see some change over time, i.e.&nbsp;AR, MD, MN. It also reveals states that have no or little data.</p>
 </section>
@@ -650,10 +650,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>                           <span class="at">:encoding</span> {<span class="at">:text</span> {<span class="at">:field</span> <span class="at">:difference</span></span>
 <span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>                                             <span class="at">:format</span> <span class="st">".1%"</span>}}}]}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div style="max-height:600px;overflow-y:auto;">
 <div>
 <script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"state","type":"nominal","axis":{"title":"State"},"sort":"-x"},"x":{"field":"difference","type":"quantitative","axis":{"domain":false,"format":"1%","title":"Change in polling place count 2012-2020"}}},"width":400,"background":"floralwhite","layer":[{"mark":"bar"},{"mark":{"type":"text","align":{"expr":"datum.difference < 0 ? 'right' : 'left'"},"dx":{"expr":"datum.difference < 0 ? -2 : 2"}},"encoding":{"text":{"field":"difference","format":".1%"}}}],"height":300,"data":{"url":"year_2024.week_3.analysis_files\/1.csv","format":{"type":"csv"}}});</script>
-</div>
 </div>
 <p>There we have it! An interesting investigation of some data on polling places. See you next week :)</p>
 <div style="background-color:grey;height:2px;width:100%;">
@@ -1205,6 +1203,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./year_2024.week_4.analysis.html" class="pagination-link" aria-label="<span class='chapter-number'>5</span>&nbsp; <span class='chapter-title'>Week 4 - Educational attainment of young people in English towns</span>">
+        <span class="nav-page-text"><span class="chapter-title">Week 4 - Educational attainment of young people in English towns</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
