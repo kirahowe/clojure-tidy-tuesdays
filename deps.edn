@@ -1,9 +1,12 @@
 {:paths ["data" "src" "env/dev/src"]
  :deps {org.clojure/clojure {:mvn/version "1.11.1"}
-        scicloj/tablecloth {:mvn/version "7.007"}
+        scicloj/tablecloth {:mvn/version "7.021"}
         org.scicloj/clay {:mvn/version "2-alpha63"}
         org.scicloj/noj {:mvn/version "1-alpha22"}
         com.ibm.icu/icu4j {:mvn/version "74.2"}
         com.cnuernber/charred {:mvn/version "1.033"}
         generateme/fastmath {:mvn/version "2.3.0"}
-        clj-http/clj-http {:mvn/version "3.12.3"}}}
+        clj-http/clj-http {:mvn/version "3.12.3"}
+        org.dhatim/fastexcel-reader  {:mvn/version "0.12.8"
+                                      :exclusions [org.apache.poi/poi-ooxml]}
+        }}

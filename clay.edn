@@ -1,12 +1,18 @@
 {:remote-repo {:git-url "https://github.com/kiramclean/clojure-tidy-tuesdays"
                :branch "main"}
+ :kindly/options {:datatables {:paging false
+                               :scrollY 400
+                               :sPaginationType "full_numbers"
+                               :order []}
+                  :element/max-height nil}
  :quarto {:format {:html {:toc true
                           :toc-depth 4
                           :theme {:light "yeti"
                                   :dark "cyborg"}
                           :mainfont "-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif"
                           :monofont "Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace"
-                          :number-sections false}}
+                          :number-sections false
+                          :grid {:body-width "1000px"}}}
           :highlight-style "atom-one"
           :code-block-background true
           :base-target-path "temp"

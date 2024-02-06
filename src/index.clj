@@ -17,7 +17,7 @@ Some goals for this project this year are:
 
 - To increase the number of non-trivial examples and guides on how to work with Clojure's emerging data science stack
 - To work out bugs and rough edges in these tools and libraries to help develop them for more professional use
-- To learn how to use them better myself, as part of writing the [Clojure Data Workbook](https://github.com/scicloj/clojure-data-cookbook/)
+- To learn how to use them better myself, as part of writing the [Clojure Data Cookbook](https://github.com/scicloj/clojure-data-cookbook/)
 
 ## Support
 
