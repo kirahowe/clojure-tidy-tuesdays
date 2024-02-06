@@ -1,0 +1,3 @@
+# Educational attainment of young people in English towns
+
+This folder has the data for week 4 of #tidytuesdays 2024. The data file is generated using the code in [`generate_dataset.clj`](generate_dataset.clj), which is mostly a "translation" into Clojure of the [cleaning script](https://github.com/rfordatascience/tidytuesday/tree/master/data/2024/2024-01-23#cleaning-script) from the R4DS tidy tuesday repo, which some additional explanations. More information about this data can be found in the [README for this data](https://github.com/rfordatascience/tidytuesday/blob/master/data/2024/2024-01-23/readme.md) in the R4DS TidyTuesday repo.
