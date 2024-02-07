@@ -21,7 +21,11 @@ Some goals for this project this year are:
 
 ## Support
 
-This work is made possible by the ongoing funding I receive from [Clojurists together](https://www.clojuriststogether.org/) and my generous [Github Sponsors](https://github.com/sponsors/kiramclean). If you find this work valuable, please consider contributing financially to it's sustainability:
+If you find any of this useful, the best help is to share it with someone else you think might learn something from it.
+
+You can also follow me for updates on this and other projects on [Mastodon](https://indieweb.social/@kira), [LinkedIn](https://www.linkedin.com/in/kiramclean/), or on the various chat rooms and forums where Clojure people hang out (like the [Clojurians Zulip instance](https://clojurians.zulipchat.com) or [Clojurians Slack](http://clojurians.net/)).
+
+Lastly, you can also support this work financially. This work is made possible by the ongoing funding I receive from [Clojurists together](https://www.clojuriststogether.org/) and my generous [Github Sponsors](https://github.com/sponsors/kiramclean). If you find this work valuable, please consider contributing financially to it's sustainability:
 
 ")
 

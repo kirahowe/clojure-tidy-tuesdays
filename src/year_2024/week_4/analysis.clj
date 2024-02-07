@@ -7,7 +7,7 @@
    [scicloj.noj.v1.vis.hanami :as hanami]
    [tablecloth.api :as tc]))
 
-;; # Week 4 - Educational attainment of young people in English towns
+;; # Week 4 - Educational Attainment of Young People in English Towns
 
 ;; This week's data is about English students. We'll try to answer the question from [the example article](https://www.ons.gov.uk/peoplepopulationandcommunity/educationandchildcare/articles/whydochildrenandyoungpeopleinsmallertownsdobetteracademicallythanthoseinlargertowns/2023-07-25), why do children and young people in smaller towns do better academically than those in larger towns?
 
