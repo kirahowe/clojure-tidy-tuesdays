@@ -8,5 +8,4 @@
         generateme/fastmath {:mvn/version "2.3.0"}
         clj-http/clj-http {:mvn/version "3.12.3"}
         org.dhatim/fastexcel-reader  {:mvn/version "0.12.8"
-                                      :exclusions [org.apache.poi/poi-ooxml]}
-        }}
+                                      :exclusions [org.apache.poi/poi-ooxml]}}}
