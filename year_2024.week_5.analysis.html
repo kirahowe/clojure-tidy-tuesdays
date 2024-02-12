@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.549">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Clojure Tidy Tuesdays - Week 5 - Groundhog Predictions</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./year_2024.week_4.analysis.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link rel="icon" href="data:,">
+<script async="" data-id="101441463" src="//static.getclicky.com/js"></script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./year_2024.week_5.analysis.html"><span class="chapter-title">Week 5 - Groundhog Predictions</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Clojure Tidy Tuesdays</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Welcome to Clojure Tidy Tuesdays!</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./year_2024.week_1.analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 1 - Holiday Movies</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./year_2024.week_2.analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 2 - Canadian NHL Hockey Player Birth Months</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./year_2024.week_3.analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 3 - US Polling Places 2012-2020</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./year_2024.week_4.analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 4 - Educational Attainment of Young People in English Towns</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./year_2024.week_5.analysis.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Week 5 - Groundhog Predictions</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#increasing-popularity-of-groundhog-day" id="toc-increasing-popularity-of-groundhog-day" class="nav-link active" data-scroll-target="#increasing-popularity-of-groundhog-day">Increasing popularity of Groundhog Day</a></li>
+  <li><a href="#geographic-distribution-of-groundhogs" id="toc-geographic-distribution-of-groundhogs" class="nav-link" data-scroll-target="#geographic-distribution-of-groundhogs">Geographic distribution of groundhogs</a></li>
+  <li><a href="#groundhog-predictions-and-geographic-location" id="toc-groundhog-predictions-and-geographic-location" class="nav-link" data-scroll-target="#groundhog-predictions-and-geographic-location">Groundhog predictions and geographic location</a></li>
+  <li><a href="#winter-vs.-spring-predictions" id="toc-winter-vs.-spring-predictions" class="nav-link" data-scroll-target="#winter-vs.-spring-predictions">Winter vs.&nbsp;spring predictions</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Week 5 - Groundhog Predictions</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<style></style>
+<style>.printedClojure .sourceCode {
+  background-color: transparent;
+  border-style: none;
+}
+</style>
+<script src="year_2024.week_5.analysis_files/md-default5.js" type="text/javascript"></script>
+<script src="year_2024.week_5.analysis_files/md-default6.js" type="text/javascript"></script>
+<script src="year_2024.week_5.analysis_files/vega7.js" type="text/javascript"></script>
+<script src="year_2024.week_5.analysis_files/vega8.js" type="text/javascript"></script>
+<script src="year_2024.week_5.analysis_files/vega9.js" type="text/javascript"></script>
+<div class="sourceClojure">
+<div class="sourceCode" id="cb1"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">ns</span> year<span class="fl">-2024.</span>week<span class="fl">-5.</span>analysis</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  (<span class="at">:require</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>   [aerial.hanami.templates <span class="at">:as</span> ht]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>   [scicloj.noj.v1.vis.hanami <span class="at">:as</span> hanami]</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>   [tablecloth.api <span class="at">:as</span> tc]</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>   [tech.v3.dataset.rolling <span class="at">:as</span> rolling]</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>   [tech.v3.dataset.column <span class="at">:as</span> tmdcol]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This week’s dataset is about groundhog day. If you haven’t heard of groundhog day, it’s a tradition observed around North America every year on February 2. The story is that Pennsylvania Dutch immigrants had a superstition that if a groundhog sees its shadow on February 2 winter will last for six more weeks, and if it doesn’t spring will come early.</p>
+<p>The website <a href="https://groundhog-day.com">groundhog-day.com</a> has a great API that provides all the info you could ever want about groundhogs around the continent and their predictions about the length of winter. We’ll be exploring that data to see if we can come up with a way to visualize it to convey the information in a more interesting way than just showing it in a table.</p>
+<section id="increasing-popularity-of-groundhog-day" class="level2">
+<h2 class="anchored" data-anchor-id="increasing-popularity-of-groundhog-day">Increasing popularity of Groundhog Day</h2>
+<p>One thing I quickly noticed when I started poking around the data is that for most of history there were very few groundhogs making predictions. We can visualize this increasing popularity of groundhog day in lots of ways. My first thought was to just make a simple line chart showing the numbers of new groundhogs reporting every year.</p>
+<p>First we load the data, making keywords keys as always.</p>
+<div class="sourceClojure">
+<div class="sourceCode" id="cb2"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>(<span class="bu">def</span><span class="fu"> groundhogs</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">-&gt;</span> <span class="st">"data/year_2024/week_5/groundhogs.csv"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>      (tc/dataset {<span class="at">:key-fn</span> <span class="kw">keyword</span>})))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Then we have to wrangle the data a little bit to add each groundhog’s debut year to our dataset. We can do this by finding the earliest prediction for each groundhog, and joining this year to our groundhogs dataset.</p>
+<div class="sourceClojure">
+<div class="sourceCode" id="cb3"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>(<span class="bu">def</span><span class="fu"> predictions</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">-&gt;</span> <span class="st">"data/year_2024/week_5/predictions.csv"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>      (tc/dataset {<span class="at">:key-fn</span> <span class="kw">keyword</span>})))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="sourceClojure">
+<div class="sourceCode" id="cb4"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>(<span class="bu">def</span><span class="fu"> groundhogs-with-debut-year</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">-&gt;</span> predictions</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>      (tc/group-by [<span class="at">:id</span>])</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>      <span class="co">;; find the earliest year for each unique ID</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>      (tc/aggregate {<span class="at">:first-year</span> #(<span class="kw">apply</span> <span class="kw">min</span> (<span class="at">:year</span> <span class="va">%</span>))})</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>      <span class="co">;; add these to the groundhogs dataset</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>      (tc/inner-join groundhogs <span class="at">:id</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now we have a dataset listing all the groundhogs that report on the weather that includes their first year in the business. We can count the number of new groundhogs reporting every year and plot this as a line:</p>
+<div class="sourceClojure">
+<div class="sourceCode" id="cb5"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> groundhogs-with-debut-year</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    (tc/group-by [<span class="at">:first-year</span>])</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    (tc/aggregate {<span class="at">:new-groundhogs</span> tc/row-count})</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    (hanami/plot ht/line-chart</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                 {<span class="at">:X</span> <span class="at">:first-year</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:XTITLE</span> <span class="st">"Year"</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:XTYPE</span> <span class="at">:temporal</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:Y</span> <span class="at">:new-groundhogs</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:YTITLE</span> <span class="st">"Number of groundhogs debuting in this year"</span>}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"new-groundhogs","type":"quantitative","axis":{"title":"Number of groundhogs debuting in this year"}},"x":{"field":"first-year","type":"temporal","axis":{"title":"Year"}}},"mark":{"type":"line","tooltip":true},"width":400,"background":"floralwhite","height":300,"data":{"url":"year_2024.week_5.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
+</div>
+<p>This doesn’t really tell us much. It might be more easy to interpret as a cumulative area chart – with the area showing the cumulative count of groundhogs. One way to do this is directly in vega-lite, with a transform:</p>
+<div class="sourceClojure">
+<div class="sourceCode" id="cb6"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> groundhogs-with-debut-year</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    (tc/group-by [<span class="at">:first-year</span>])</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    (tc/aggregate {<span class="at">:new-groundhogs</span> tc/row-count})</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    (hanami/plot ht/area-chart</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>                 {<span class="at">:X</span> <span class="at">:first-year</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:XTITLE</span> <span class="st">"Year"</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:XTYPE</span> <span class="at">:temporal</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:Y</span> <span class="at">:cumulative-count</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:YTITLE</span> <span class="st">"Cumulative count of groundhogs"</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:TRANSFORM</span> [{<span class="at">:sort</span> [{<span class="at">:field</span> <span class="at">:first-year</span>}]</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>                               <span class="at">:window</span> [{<span class="at">:as</span> <span class="at">:cumulative-count</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">:field</span> <span class="at">:new-groundhogs</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">:op</span> <span class="st">"sum"</span>}]}]}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"cumulative-count","type":"quantitative","axis":{"title":"Cumulative count of groundhogs"}},"x":{"field":"first-year","type":"temporal","axis":{"title":"Year"}}},"transform":[{"sort":[{"field":"first-year"}],"window":[{"as":"cumulative-count","field":"new-groundhogs","op":"sum"}]}],"mark":{"type":"area","tooltip":true},"width":400,"background":"floralwhite","height":300,"data":{"url":"year_2024.week_5.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
+</div>
+<p>But in some cases, for example if the dataset were way bigger or if there were more complicated calculations to do than just summing up a field, we might want to manipulate the data on the JVM side and just send the points to plot to the browser. This is a good chance to demonstrate how to work with rolling windows in tablecloth too, so for the sake of demonstration, that would look like this:</p>
+<div class="sourceClojure">
+<div class="sourceCode" id="cb7"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> groundhogs-with-debut-year</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    (tc/group-by [<span class="at">:first-year</span>])</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    (tc/aggregate {<span class="at">:new-groundhogs</span> tc/row-count})</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    (rolling/expanding {<span class="at">:cumulative-count</span> (rolling/sum <span class="at">:new-groundhogs</span>)})</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">;; now we have our years and cumulative count of groundhogs computed</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    (hanami/plot ht/area-chart</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>                 {<span class="at">:X</span> <span class="at">:first-year</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:XTYPE</span> <span class="at">:temporal</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:Y</span> <span class="at">:cumulative-count</span>}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"cumulative-count","type":"quantitative"},"x":{"field":"first-year","type":"temporal"}},"mark":{"type":"area","tooltip":true},"width":400,"background":"floralwhite","height":300,"data":{"url":"year_2024.week_5.analysis_files\/1.csv","format":{"type":"csv"}}});</script>
+</div>
+<p>That’s a bit better. It’s obvious from this that groundhog day really took off in the 2010s. We could show this more clearly by plotting the number of new groundhogs per decade:</p>
+<div class="sourceClojure">
+<div class="sourceCode" id="cb8"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> groundhogs-with-debut-year</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">;; add a new column with the decade of each groundhog's first year</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    (tc/map-columns <span class="at">:decade</span> [<span class="at">:first-year</span>] #(<span class="kw">-&gt;</span> <span class="va">%</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>                                               (<span class="kw">/</span> <span class="dv">10</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                                               (Math/floor)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>                                               (<span class="kw">*</span> <span class="dv">10</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>                                               <span class="kw">int</span>))</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">;; count how many new groundhogs there were per decade</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    (tc/group-by [<span class="at">:decade</span>])</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    (tc/aggregate {<span class="at">:count</span> tc/row-count})</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="co">;; make a simple bar chart with this data</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    (hanami/plot ht/bar-chart</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>                 {<span class="at">:X</span> <span class="at">:decade</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:XTYPE</span> <span class="at">:temporal</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:MSIZE</span> <span class="dv">15</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:Y</span> <span class="at">:count</span>}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"count","type":"quantitative"},"x":{"field":"decade","type":"temporal"}},"mark":{"type":"bar","size":15,"tooltip":true},"width":400,"background":"floralwhite","height":300,"data":{"url":"year_2024.week_5.analysis_files\/2.csv","format":{"type":"csv"}}});</script>
+</div>
+<p>Over 30 places got groundhogs reporting on the weather in the 2010s. I wonder what happened then? I’m also curious about where these groundhogs are from.</p>
+</section>
+<section id="geographic-distribution-of-groundhogs" class="level2">
+<h2 class="anchored" data-anchor-id="geographic-distribution-of-groundhogs">Geographic distribution of groundhogs</h2>
+<p>To see this we can show each groundhog’s location on a map. They’re all in the USA or Canada, so we can project these onto a map of those two countries. Vega-lite supports simple projections onto maps, so we’ll try our luck with it. We’ll have to write a custom hanami template, though, but that’s no problem.</p>
+<div class="sourceClojure">
+<div class="sourceCode" id="cb9"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> groundhogs-with-debut-year</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    (tc/map-columns <span class="at">:decade</span> [<span class="at">:first-year</span>] #(<span class="kw">-&gt;</span> <span class="va">%</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                                               (<span class="kw">/</span> <span class="dv">10</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                                               (Math/floor)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>                                               (<span class="kw">*</span> <span class="dv">10</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>                                               <span class="kw">int</span>))</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    (tc/select-columns [<span class="at">:id</span> <span class="at">:decade</span> <span class="at">:latitude</span> <span class="at">:longitude</span>])</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    (hanami/plot {<span class="at">:layer</span> [{<span class="at">:data</span> {<span class="at">:format</span> {<span class="at">:type</span> <span class="st">"topojson"</span> <span class="at">:feature</span> <span class="at">:default</span>} <span class="at">:url</span> <span class="at">:TOPOURL</span>}</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>                           <span class="at">:mark</span> {<span class="at">:fill</span> <span class="st">"lightgray"</span> <span class="at">:type</span> <span class="st">"geoshape"</span>}</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>                           <span class="at">:projection</span> <span class="at">:PROJECTION</span>}</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>                          {<span class="at">:data</span> {<span class="at">:values</span> <span class="at">:DATA</span> <span class="at">:format</span> <span class="at">:DFMT</span>}</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>                           <span class="at">:encoding</span> {<span class="at">:latitude</span> {<span class="at">:field</span> <span class="at">:LAT</span> <span class="at">:type</span> <span class="st">"quantitative"</span>}</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">:longitude</span> {<span class="at">:field</span> <span class="at">:LONG</span> <span class="at">:type</span> <span class="st">"quantitative"</span>}</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>                                      <span class="at">:color</span> <span class="at">:COLOR</span>}</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>                           <span class="at">:projection</span> <span class="at">:PROJECTION</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>                           <span class="at">:mark</span> {<span class="at">:type</span> <span class="st">"circle"</span> <span class="at">:size</span> <span class="at">:MSIZE</span>}}]</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:height</span> <span class="at">:HEIGHT</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:width</span> <span class="at">:WIDTH</span>}</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>                 {<span class="at">:HEIGHT</span> <span class="dv">1000</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:WIDTH</span> <span class="dv">900</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:TOPOURL</span> <span class="st">"https://code.highcharts.com/mapdata/custom/usa-and-canada.topo.json"</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:PROJECTION</span> {<span class="at">:type</span> <span class="st">"conicConformal"</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>                               <span class="at">:parallels</span> [<span class="dv">45</span> <span class="dv">33</span>]</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>                               <span class="at">:rotate</span> [<span class="dv">105</span>]}</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:LAT</span> <span class="st">"latitude"</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:LONG</span> <span class="st">"longitude"</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:MSIZE</span> <span class="dv">80</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:COLOR</span> {<span class="at">:field</span> <span class="st">"decade"</span></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>                          <span class="at">:scale</span> {<span class="at">:scheme</span> <span class="st">"category10"</span>}}}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div>
+<script>vegaEmbed(document.currentScript.parentElement, {"layer":[{"data":{"format":{"type":"topojson","feature":"default"},"url":"https:\/\/code.highcharts.com\/mapdata\/custom\/usa-and-canada.topo.json"},"mark":{"fill":"lightgray","type":"geoshape"},"projection":{"type":"conicConformal","parallels":[45,33],"rotate":[105]}},{"data":{"values":"id,decade,latitude,longitude\n1,1880,40.9311988,-78.9622483\n2,1920,39.8255413,-76.0919567\n3,1950,44.7438686,-81.1386838\n4,1960,43.1826322,-89.2143204\n5,1970,37.4245956,-81.0095902\n6,1980,40.6141291,-83.1321507\n7,1980,33.233898,-83.9466163\n8,1980,38.8573662,-80.3149827\n9,1990,40.732973,-89.7383042\n10,1980,42.4609398,-79.3944887\n11,1990,40.6793192,-73.6665466\n12,1980,40.6251281,-74.1175587\n13,1980,42.830629,-108.722943\n14,1990,50.1738294,-97.1351477\n15,1990,40.7967917,-73.0358701\n16,1990,45.0921321,-63.397339\n17,1990,42.523758,-83.9529562\n18,1990,42.3142948,-88.4477184\n19,2000,35.7821867,-78.6414861\n20,1990,40.9014222,-75.497874\n21,2000,39.9658603,-76.729263\n22,2000,51.1908339,-114.0008889\n23,2000,40.4181266,-76.2999232\n24,2000,40.5716175,-76.3676593\n25,2000,42.4094032,-71.3339523\n26,2000,39.6890151,-104.8269175\n27,2000,41.7555391,-72.5221167\n28,2000,41.2109112,-74.6968543\n29,2010,40.0247794,-105.2271559\n30,2000,47.812527,-122.3818957\n31,2010,45.9364617,-60.3005507\n32,2010,30.304515,-97.93843\n33,2010,43.124424,-80.7544241\n34,2010,48.5143473,-64.3996831\n35,2000,42.8156259,-81.5525152\n36,2010,41.2097196,-73.1843214\n37,2010,34.1666754,-86.1192772\n38,2010,39.1014751,-78.1945146\n39,2010,42.7245868,-78.6732692\n40,2010,39.9979137,-76.8571679\n41,2010,43.0208392,-79.3629854\n42,2010,41.9735597,-77.201705\n43,2010,40.1091208,-76.5043106\n44,2000,43.6078333,-116.2049143\n45,2010,40.33607,-75.9078327\n46,2010,41.5830468,-93.6206605\n47,2010,37.0699814,-76.4818192\n48,2010,41.901251,-72.0815198\n49,2010,35.6800912,-78.6279155\n50,2010,48.5224835,-117.8912722\n51,2010,39.8921524,-75.2572137\n52,2010,41.6818106,-83.6675126\n53,2010,39.9335365,-82.501816\n54,2010,40.290503,-75.3823447\n55,2010,42.7669782,-82.1832562\n56,2010,38.9097387,-77.043891\n57,2010,34.7159524,-86.5418817\n58,2010,49.159641,-124.0503748\n59,2010,39.9362979,-120.9523743\n60,2010,41.6904499,-81.2526303\n61,2010,41.2634599,-73.7307821\n62,2010,43.0315284,-88.0424457\n63,2010,43.5128603,-65.611397\n64,2010,40.2467673,-76.4677586\n65,2020,40.1213254,-76.6644525\n66,2020,45.5100569,-122.7158264\n67,2020,34.6229744,-83.8676887\n68,2020,39.303483,-85.7731068\n69,2020,40.0588008,-76.3072977\n70,2020,42.7669782,-82.1832562\n71,2020,40.7674513,-74.2839038\n72,2020,50.2400127,-119.2915259\n73,2020,35.243478,-82.7769959\n74,2020,39.6528658,-78.7646866\n75,2020,40.6834005,-96.2751068\n","format":{"type":"csv"}},"encoding":{"latitude":{"field":"latitude","type":"quantitative"},"longitude":{"field":"longitude","type":"quantitative"},"color":{"field":"decade","scale":{"scheme":"category10"}}},"projection":{"type":"conicConformal","parallels":[45,33],"rotate":[105]},"mark":{"type":"circle","size":80}}],"height":1000,"width":900,"data":null});</script>
+</div>
+<p>This shows us that Groundhog Day is much more widely observed in the north-east than anywhere else. I also can’t help but notice three dots in the province where I live, so I have to find out who my local groundhogs are.</p>
+<div class="sourceClojure">
+<div class="sourceCode" id="cb10"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> groundhogs-with-debut-year</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    (tc/select-rows #(<span class="kw">=</span> <span class="st">"Canada"</span> (<span class="at">:country</span> <span class="va">%</span>)))</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    tc/row-count)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="printedClojure">
+<div class="sourceCode" id="cb11"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dv">14</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>There are 14 groundhogs in total in Canada. We can see just the ones in Nova Scotia:</p>
+<div class="sourceClojure">
+<div class="sourceCode" id="cb12"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> groundhogs-with-debut-year</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    (tc/select-rows #(<span class="kw">=</span> <span class="st">"Nova Scotia"</span> (<span class="at">:region</span> <span class="va">%</span>))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>inner-join [3 18]:</p>
+<table class="table">
+<colgroup>
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 39%">
+<col style="width: 2%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 2%">
+<col style="width: 1%">
+<col style="width: 2%">
+<col style="width: 14%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 7%">
+<col style="width: 15%">
+<col style="width: 2%">
+<col style="width: 1%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">:id</th>
+<th style="text-align: right;">:first-year</th>
+<th>:description</th>
+<th>:slug</th>
+<th style="text-align: right;">:latitude</th>
+<th style="text-align: right;">:longitude</th>
+<th>:isGroundhog</th>
+<th>:name</th>
+<th>:city</th>
+<th>:type</th>
+<th>:source</th>
+<th>:region</th>
+<th>:active</th>
+<th>:shortname</th>
+<th>:image</th>
+<th>:currentPrediction</th>
+<th style="text-align: right;">:predictionsCount</th>
+<th>:country</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">1999</td>
+<td>Shubenacadie Sam is a weather-predicting groundhog who resides at the Shubenacadie Wildlife Park in Nova Scotia. Living on the eastern edge of Canada, Sam makes the first prediction in North America every year at 8:00 am AST. Sam is active on Twitter and enjoys yoga and meditation.</td>
+<td>shubenacadie-sam</td>
+<td style="text-align: right;">45.0921321</td>
+<td style="text-align: right;">-63.3973390</td>
+<td>true</td>
+<td>Shubenacadie Sam</td>
+<td>Shubenacadie</td>
+<td>Groundhog</td>
+<td>https://data.novascotia.ca/Lands-Forests-and-Wildlife/Shubenacadie-Wildlife-Park-Groundhog-Day-Predictio/4y37-h2yu</td>
+<td>Nova Scotia</td>
+<td>true</td>
+<td>Sam</td>
+<td>https://groundhog-day.com/images/ghogs/shubenacadie-sam.jpeg</td>
+<td>https://twitter.com/ShubenacadieSam/status/1753395520351986102</td>
+<td style="text-align: right;">26</td>
+<td>Canada</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">31</td>
+<td style="text-align: right;">2010</td>
+<td>Two Rivers Tunnel is the official prognosticator for Cape Breton, located in Two Rivers Wildlife Park. Tunnel the groundhog lives in a charming green house and speaks in a distinct Groundhogese dialect — most likely native to Cape Breton, where he has been making predictions for over 20 years.</td>
+<td>two-rivers-tunnel</td>
+<td style="text-align: right;">45.9364617</td>
+<td style="text-align: right;">-60.3005507</td>
+<td>true</td>
+<td>Two Rivers Tunnel</td>
+<td>Cape Breton</td>
+<td>Groundhog</td>
+<td>https://www.facebook.com/TwoRiversWildlifePark/</td>
+<td>Nova Scotia</td>
+<td>true</td>
+<td>Tunnel</td>
+<td>https://groundhog-day.com/images/ghogs/two-rivers-tunnel.jpeg</td>
+<td>https://www.facebook.com/TwoRiversWildlifePark/posts/pfbid0wdbQg47T3HArkyF2LvRMtEfGsCj4arPPKuHWhANQWYPbkFp9qm6zmXmpyf8xmy3fl</td>
+<td style="text-align: right;">15</td>
+<td>Canada</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">63</td>
+<td style="text-align: right;">2018</td>
+<td>Lucy the Lobster makes Groundhog Day predictions on February 2nd to kick off the Lobster Crawl festival in Barrington, Nova Scotia. The Municipality of Barrington says Lucy is the only prognosticating crustacean to make a prediction in Canada. Bill Murray was reported as being bemused by the idea of a lobster forecaster.</td>
+<td>lucy-the-lobster</td>
+<td style="text-align: right;">43.5128603</td>
+<td style="text-align: right;">-65.6113970</td>
+<td>false</td>
+<td>Lucy the Lobster</td>
+<td>Barrington</td>
+<td>Atlantic lobster</td>
+<td>https://twitter.com/lucylobsterns</td>
+<td>Nova Scotia</td>
+<td>true</td>
+<td>Lucy</td>
+<td>https://groundhog-day.com/images/ghogs/lucy-the-lobster.jpeg</td>
+<td>https://twitter.com/NateTWN/status/1753389360357978209</td>
+<td style="text-align: right;">6</td>
+<td>Canada</td>
+</tr>
+</tbody>
+</table>
+<p>It turns out the one closest to me is actually a lobster! Which is adorable. Lobster fishing is a huge industry in my area, so this is a great gimmick. Anyway, moving on.</p>
+<p>I think it would be interesting to explore the predictions a little bit too.</p>
+</section>
+<section id="groundhog-predictions-and-geographic-location" class="level2">
+<h2 class="anchored" data-anchor-id="groundhog-predictions-and-geographic-location">Groundhog predictions and geographic location</h2>
+<p>I’m curious whether groundhogs (or other creatures) that live further north are more likely to predict more winter. It definitely feels like winter is never going to end up here most years, especially in February.</p>
+<p>To explore this, we can compute the proportion of “continued winter” predictions per groundhog, and plot that against latitude.</p>
+<div class="sourceClojure">
+<div class="sourceCode" id="cb13"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> predictions</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    (tc/group-by [<span class="at">:id</span>])</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    (tc/aggregate {<span class="at">:winter-percent</span> #(<span class="kw">double</span> (<span class="kw">/</span> (<span class="kw">-&gt;&gt;</span> <span class="va">%</span> <span class="at">:shadow</span> (<span class="kw">remove</span> <span class="kw">false?</span>) <span class="kw">count</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>                                               (tc/row-count <span class="va">%</span>)))})</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    (tc/inner-join groundhogs [<span class="at">:id</span>])</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    (tc/select-columns [<span class="at">:id</span> <span class="at">:winter-percent</span> <span class="at">:latitude</span>])</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    (hanami/plot ht/point-chart</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>                 {<span class="at">:X</span> <span class="at">:latitude</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:XSCALE</span> {<span class="at">:zero</span> <span class="va">false</span>}</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:Y</span> <span class="at">:winter-percent</span>}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"winter-percent","type":"quantitative"},"x":{"scale":{"zero":false},"field":"latitude","type":"quantitative"}},"mark":{"type":"circle","tooltip":true},"width":400,"background":"floralwhite","height":300,"data":{"url":"year_2024.week_5.analysis_files\/3.csv","format":{"type":"csv"}}});</script>
+</div>
+<p>It doesn’t really look like there’s any relationship here. We can quantify it by computing the correlation coefficient between these two values. This is a simple calculation that’s built right in to <code>tech.ml.dataset</code>, the library underlying tablecloth, so we can pass our columns right into it. We also have to tell it which type of correlation to compute (<code>:pearson</code>, <code>:spearman</code>, and <code>:kendall</code> are supported).</p>
+<div class="sourceClojure">
+<div class="sourceCode" id="cb14"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">let</span> [ds (<span class="kw">-&gt;</span> predictions</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>             (tc/group-by [<span class="at">:id</span>])</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>             (tc/aggregate {<span class="at">:winter-percent</span> #(<span class="kw">double</span> (<span class="kw">/</span> (<span class="kw">-&gt;&gt;</span> <span class="va">%</span> <span class="at">:shadow</span> (<span class="kw">remove</span> <span class="kw">false?</span>) <span class="kw">count</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>                                                        (tc/row-count <span class="va">%</span>)))})</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>             (tc/inner-join groundhogs [<span class="at">:id</span>]))]</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  (tmdcol/correlation (<span class="at">:winter-percent</span> ds) (<span class="at">:latitude</span> ds) <span class="at">:pearson</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="printedClojure">
+<div class="sourceCode" id="cb15"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.0876661440031309</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This is effectively no correlation, so interestingly enough groundhogs living further north do not disproportionately predict longer winters.</p>
+</section>
+<section id="winter-vs.-spring-predictions" class="level2">
+<h2 class="anchored" data-anchor-id="winter-vs.-spring-predictions">Winter vs.&nbsp;spring predictions</h2>
+<p>The last thing we can look at is the proportion of groundhogs that predict winter vs spring each year. We’ll select only years since 1980, when groundhog day started to take off, and filter out rows that have no prediction</p>
+<div class="sourceClojure">
+<div class="sourceCode" id="cb16"><pre class="sourceCode clojure code-with-copy"><code class="sourceCode clojure"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">-&gt;</span> predictions</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    (tc/select-rows #(<span class="kw">&lt;</span> <span class="dv">1980</span> (<span class="at">:year</span> <span class="va">%</span>)))</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    (tc/select-rows #(<span class="kw">not</span> (<span class="kw">nil?</span> (<span class="at">:shadow</span> <span class="va">%</span>))))</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    (hanami/plot ht/bar-chart</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>                 {<span class="at">:X</span> <span class="at">:year</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:XTYPE</span> <span class="at">:temporal</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:YAGG</span> <span class="st">"count"</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:YSTACK</span> <span class="st">"normalize"</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:YTITLE</span> <span class="st">"Percentage of predictions"</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:YGRID</span> <span class="va">false</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:COLOR</span> {<span class="at">:field</span> <span class="st">"shadow"</span> <span class="at">:scale</span> {<span class="at">:range</span> [<span class="st">"gold"</span> <span class="st">"lightblue"</span>]}</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>                          <span class="at">:legend</span> {<span class="at">:title</span> <span class="st">"Prediction"</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">:labelExpr</span> <span class="st">"{'true': 'Extended winter', 'false': 'Early spring'}[datum.label]"</span>}}</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:WIDTH</span> <span class="dv">700</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:MSIZE</span> <span class="dv">13</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:BACKGROUND</span> <span class="st">"white"</span>}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"y","type":"quantitative","stack":"normalize","aggregate":"count","axis":{"title":"Percentage of predictions","grid":false}},"color":{"field":"shadow","scale":{"range":["gold","lightblue"]},"legend":{"title":"Prediction","labelExpr":"{'true': 'Extended winter', 'false': 'Early spring'}[datum.label]"}},"x":{"field":"year","type":"temporal"}},"mark":{"type":"bar","size":13,"tooltip":true},"width":700,"background":"white","height":300,"data":{"url":"year_2024.week_5.analysis_files\/4.csv","format":{"type":"csv"}}});</script>
+</div>
+<p>So there we have it, some visualizations exploring the groundhog day data. On to next week. See you then :)</p>
+<div style="background-color:grey;height:2px;width:100%;">
+
+</div>
+<div>
+<pre><small><small>source: <a href="https://github.com/kiramclean/clojure-tidy-tuesdays/blob/main/src/year_2024/week_5/analysis.clj">src/year_2024/week_5/analysis.clj</a></small></small></pre>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a 4="" href="./year_2024.week_4.analysis.html" class="pagination-link  aria-label=" &lt;span="" -="" educational="" attainment="" of="" young="" people="" in="" english="" towns&lt;="" span&gt;"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Week 4 - Educational Attainment of Young People in English Towns</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
