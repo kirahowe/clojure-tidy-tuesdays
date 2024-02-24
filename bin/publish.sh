@@ -14,7 +14,8 @@ cd "$(dirname "$0")"
 
 cd ..
 echoOrange ">>>>>> Building quarto book with clay...\n"
-clojure -M -m build
+# todo.. figure out how to call dev/build
+clojure -X dev/build-cli
 
 cd docs
 echoOrange ">>>>>> Updating _quarto.yml...\n"

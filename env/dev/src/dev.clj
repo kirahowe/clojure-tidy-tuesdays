@@ -1,7 +1,13 @@
-(ns build
-  (:require [scicloj.clay.v2.api :as clay]))
+(ns dev
+  (:require
+   [aerial.hanami.common :as hc]
+   [scicloj.clay.v2.api :as clay]))
 
 (defn build []
+  (swap! hc/_defaults
+         assoc
+         :BACKGROUND "white")
+
   (clay/make!
    {:show false
     :run-quarto false
@@ -17,6 +23,6 @@
                   "year_2024/week_4/analysis.clj"
                   "year_2024/week_5/analysis.clj"]}))
 
-(defn -main []
+(defn build-cli [_]
   (build)
   (System/exit 0))
