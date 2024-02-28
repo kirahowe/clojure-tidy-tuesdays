@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -177,6 +177,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <a href="./year_2024.week_5.analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 5 - Groundhog Predictions</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./year_2024.week_6.analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">A Few World Heritage Sites</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -252,7 +257,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    (hanami/plot ht/bar-chart {}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
-<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"y","type":"quantitative"},"x":{"field":"x","type":"quantitative"}},"mark":{"type":"bar","tooltip":true},"width":400,"background":"floralwhite","height":300,"data":{"url":"year_2024.week_1.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"y","type":"quantitative"},"x":{"field":"x","type":"quantitative"}},"mark":{"type":"bar","tooltip":true},"width":400,"background":"white","height":300,"data":{"url":"year_2024.week_1.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
 </div>
 <p>We have to tell hanami what values to use in the chart and what they are:</p>
 <div class="sourceClojure">
@@ -264,7 +269,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>                               <span class="at">:YTYPE</span> <span class="st">"nominal"</span>}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
-<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"primary_title","type":"nominal"},"x":{"field":"num_votes","type":"quantitative"}},"mark":{"type":"bar","tooltip":true},"width":400,"background":"floralwhite","height":300,"data":{"url":"year_2024.week_1.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"primary_title","type":"nominal"},"x":{"field":"num_votes","type":"quantitative"}},"mark":{"type":"bar","tooltip":true},"width":400,"background":"white","height":300,"data":{"url":"year_2024.week_1.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
 </div>
 <p>This works! We’ll give it a few more options to tidy up the chart, like sorting the bars by number of votes rather than alphabetically and re-labelling the axes:</p>
 <div class="sourceClojure">
@@ -279,7 +284,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>                               <span class="at">:YSORT</span> <span class="st">"-x"</span>}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
-<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"primary_title","type":"nominal","axis":{"title":"Title"},"sort":"-x"},"x":{"field":"num_votes","type":"quantitative","axis":{"title":"Number of votes"}}},"mark":{"type":"bar","tooltip":true},"width":400,"background":"floralwhite","height":300,"data":{"url":"year_2024.week_1.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"primary_title","type":"nominal","axis":{"title":"Title"},"sort":"-x"},"x":{"field":"num_votes","type":"quantitative","axis":{"title":"Number of votes"}}},"mark":{"type":"bar","tooltip":true},"width":400,"background":"white","height":300,"data":{"url":"year_2024.week_1.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
 </div>
 </section>
 <section id="adding-labels-to-the-bar-chart" class="level2">
@@ -304,7 +309,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>                           <span class="at">:encoding</span> {<span class="at">:text</span> {<span class="at">:field</span> <span class="st">"num_votes"</span>}}}]}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
-<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"primary_title","type":"nominal","axis":{"title":"Title"},"sort":"-x"},"x":{"field":"num_votes","type":"quantitative","stack":null,"axis":{"title":"Number of votes"}}},"width":500,"background":"floralwhite","title":{"text":"Christmas Movies"},"layer":[{"mark":{"type":"bar"}},{"mark":{"type":"text","align":"left","baseline":"middle","dx":3},"encoding":{"text":{"field":"num_votes"}}}],"height":300,"data":{"url":"year_2024.week_1.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"primary_title","type":"nominal","axis":{"title":"Title"},"sort":"-x"},"x":{"field":"num_votes","type":"quantitative","stack":null,"axis":{"title":"Number of votes"}}},"width":500,"background":"white","title":{"text":"Christmas Movies"},"layer":[{"mark":{"type":"bar"}},{"mark":{"type":"text","align":"left","baseline":"middle","dx":3},"encoding":{"text":{"field":"num_votes"}}}],"height":300,"data":{"url":"year_2024.week_1.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
 </div>
 <p>This is a similar idea to what’s accomplished in the article. We don’t have exactly the same data, so we can’t encode the Oscar status of each movie in the colour, but we could do something else, like indicate the decade in which the film was released. There are lots of ways to accomplish this. There would be a way to tell vega-lite to do it (via Hanami), but for the sake of exploring Clojure some more we’ll do the data wrangling part with it. To do that we’ll start with our dataset of the 20 most popular movies and add a column for the release decade, then update our plot to have the bars coloured by decade.</p>
 <div class="sourceClojure">
@@ -329,7 +334,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>                               <span class="at">:COLOR</span> <span class="st">"decade"</span>}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
-<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"primary_title","type":"nominal","axis":{"title":"Title"},"sort":"-x"},"color":{"field":"decade","type":"nominal"},"x":{"field":"num_votes","type":"quantitative","axis":{"title":"Number of votes"}}},"mark":{"type":"bar","tooltip":true},"width":400,"background":"floralwhite","height":300,"data":{"url":"year_2024.week_1.analysis_files\/1.csv","format":{"type":"csv"}}});</script>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"primary_title","type":"nominal","axis":{"title":"Title"},"sort":"-x"},"color":{"field":"decade","type":"nominal"},"x":{"field":"num_votes","type":"quantitative","axis":{"title":"Number of votes"}}},"mark":{"type":"bar","tooltip":true},"width":400,"background":"white","height":300,"data":{"url":"year_2024.week_1.analysis_files\/1.csv","format":{"type":"csv"}}});</script>
 </div>
 <p>Without the bar labels, this is reasonably straightforward.</p>
 </section>
@@ -934,12 +939,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link  aria-label=" &lt;span="" to="" clojure="" tidy="" tuesdays!&lt;="" span&gt;"="">
+      <a href="./index.html" class="pagination-link" aria-label="Welcome to Clojure Tidy Tuesdays!">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Welcome to Clojure Tidy Tuesdays!</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./year_2024.week_2.analysis.html" class="pagination-link" aria-label="<span class='chapter-number'>3</span>&nbsp; <span class='chapter-title'>Week 2 - Canadian NHL Hockey Player Birth Months</span>">
+      <a href="./year_2024.week_2.analysis.html" class="pagination-link" aria-label="Week 2 - Canadian NHL Hockey Player Birth Months">
         <span class="nav-page-text"><span class="chapter-title">Week 2 - Canadian NHL Hockey Player Birth Months</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

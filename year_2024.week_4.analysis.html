@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -175,6 +175,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./year_2024.week_5.analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 5 - Groundhog Predictions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./year_2024.week_6.analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">A Few World Heritage Sites</span></a>
   </div>
 </li>
     </ul>
@@ -1069,7 +1074,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">:YTYPE</span> <span class="st">"nominal"</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
-<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"size_flag","type":"nominal"},"x":{"field":"education_score","type":"quantitative"}},"mark":{"type":"circle","tooltip":true},"width":400,"background":"floralwhite","height":300,"data":{"url":"year_2024.week_4.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"size_flag","type":"nominal"},"x":{"field":"education_score","type":"quantitative"}},"mark":{"type":"circle","tooltip":true},"width":400,"background":"white","height":300,"data":{"url":"year_2024.week_4.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
 </div>
 <p>We can add jitter to this chart to spread out the points along the y axis since they’re all bunched up because of how we’re sorting them along the y axis:</p>
 <div class="sourceClojure">
@@ -1092,7 +1097,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>              <span class="at">:YOFFSET</span> {<span class="at">:field</span> <span class="st">"jitter"</span> <span class="at">:type</span> <span class="st">"quantitative"</span>}})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
-<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"size_flag","type":"nominal"},"yOffset":{"field":"jitter","type":"quantitative"},"x":{"field":"education_score","type":"quantitative"}},"transform":[{"calculate":"sqrt(-2*log(random()))*cos(2*PI*random())","as":"jitter"}],"mark":{"type":"circle","tooltip":true},"width":400,"background":"floralwhite","height":{"step":60},"data":{"url":"year_2024.week_4.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"size_flag","type":"nominal"},"yOffset":{"field":"jitter","type":"quantitative"},"x":{"field":"education_score","type":"quantitative"}},"transform":[{"calculate":"sqrt(-2*log(random()))*cos(2*PI*random())","as":"jitter"}],"mark":{"type":"circle","tooltip":true},"width":400,"background":"white","height":{"step":60},"data":{"url":"year_2024.week_4.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
 </div>
 <p>This is slightly better, but it’s already obvious that we’re never going to be able to replicate the graph in the article this way – there’s no way to specify anything precise about how to offset the points along the y axis with the jittering that vega-lite supports. To proceed and try to replicate the graph from the article, we can make a beeswarm plot. For this we’ll have to use vega itself (as opposed to vega-lite). Vega-lite is awesome, but it’s an intentionally less complete (but as a tradeoff simpler) layer on top of vega. Every once in a while I come across a type of graph that is not well supported by vega-lite and drop into vega. Fortunately there are lots of solutions for rendering vega plots in Clojure notebooks (like <a href="https://github.com/scicloj/clay">Clay</a>, which I’m using to build this book).</p>
 </section>
@@ -1362,7 +1367,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:CTYPE</span> <span class="st">"nominal"</span>}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
-<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"size_flag","type":"nominal","axis":{"title":"Town size"}},"color":{"field":"income_flag","type":"nominal"},"x":{"field":"education_score","type":"quantitative","stack":"normalize","aggregate":"sum","axis":{"title":"Count"}}},"mark":{"type":"bar","tooltip":true},"width":400,"background":"floralwhite","height":300,"data":{"url":"year_2024.week_4.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"size_flag","type":"nominal","axis":{"title":"Town size"}},"color":{"field":"income_flag","type":"nominal"},"x":{"field":"education_score","type":"quantitative","stack":"normalize","aggregate":"sum","axis":{"title":"Count"}}},"mark":{"type":"bar","tooltip":true},"width":400,"background":"white","height":300,"data":{"url":"year_2024.week_4.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
 </div>
 <p>The data from the “BUA”s and London is making this look less than ideal, so we’ll filter for only the categories of towns that are included in the article’s graph:</p>
 <div class="sourceClojure">
@@ -1381,7 +1386,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:CTYPE</span> <span class="st">"nominal"</span>}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
-<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"size_flag","type":"nominal","axis":{"title":"Town size"}},"color":{"field":"income_flag","type":"nominal"},"x":{"field":"education_score","type":"quantitative","stack":"normalize","aggregate":"sum","axis":{"title":"Count"}}},"mark":{"type":"bar","tooltip":true},"width":400,"background":"floralwhite","height":300,"data":{"url":"year_2024.week_4.analysis_files\/1.csv","format":{"type":"csv"}}});</script>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"size_flag","type":"nominal","axis":{"title":"Town size"}},"color":{"field":"income_flag","type":"nominal"},"x":{"field":"education_score","type":"quantitative","stack":"normalize","aggregate":"sum","axis":{"title":"Count"}}},"mark":{"type":"bar","tooltip":true},"width":400,"background":"white","height":300,"data":{"url":"year_2024.week_4.analysis_files\/1.csv","format":{"type":"csv"}}});</script>
 </div>
 <p>This seems to show that the incidence of income deprivation is higher the larger the town size. We can visualize this relationship in another way by making a scatterplot, like in the article.</p>
 </section>
@@ -1397,7 +1402,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:YSCALE</span> {<span class="at">:zero</span> <span class="va">false</span>}}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
-<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"scale":{"zero":false},"field":"Income deprivation score","type":"quantitative"},"x":{"field":"Educational attainment score","type":"quantitative"}},"mark":{"type":"circle","tooltip":true},"width":400,"background":"floralwhite","height":300,"data":{"url":"year_2024.week_4.analysis_files\/2.csv","format":{"type":"csv"}}});</script>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"scale":{"zero":false},"field":"Income deprivation score","type":"quantitative"},"x":{"field":"Educational attainment score","type":"quantitative"}},"mark":{"type":"circle","tooltip":true},"width":400,"background":"white","height":300,"data":{"url":"year_2024.week_4.analysis_files\/2.csv","format":{"type":"csv"}}});</script>
 </div>
 <p>This reveals that income deprivation seems to be worse in larger towns, but this isn’t the whole story. The article also investigates regional differences. To see the effect of region on education scores, we can plot scores vs region and encode the town size in the color of the points. We’ll go back to our original dataset for this. The <code>rgn11nm</code> column contains the region we’re looking for.</p>
 </section>
@@ -1413,7 +1418,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:CTYPE</span> <span class="st">"nominal"</span>}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
-<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"rgn11nm","type":"nominal"},"color":{"field":"income_flag","type":"nominal"},"x":{"field":"education_score","type":"quantitative"}},"mark":{"type":"circle","tooltip":true},"width":400,"background":"floralwhite","height":300,"data":{"url":"year_2024.week_4.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"rgn11nm","type":"nominal"},"color":{"field":"income_flag","type":"nominal"},"x":{"field":"education_score","type":"quantitative"}},"mark":{"type":"circle","tooltip":true},"width":400,"background":"white","height":300,"data":{"url":"year_2024.week_4.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
 </div>
 <p>This is pretty close, but we can take the average of all scores in a given region to reduce some of the noise, and make the points larger to make it easier to see them.</p>
 <div class="sourceClojure">
@@ -1428,7 +1433,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:CTYPE</span> <span class="st">"nominal"</span>}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
-<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"rgn11nm","type":"nominal"},"color":{"field":"income_flag","type":"nominal"},"x":{"field":"education_score","type":"quantitative","aggregate":"mean"}},"mark":{"type":"circle","size":100,"tooltip":true},"width":400,"background":"floralwhite","height":300,"data":{"url":"year_2024.week_4.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"rgn11nm","type":"nominal"},"color":{"field":"income_flag","type":"nominal"},"x":{"field":"education_score","type":"quantitative","aggregate":"mean"}},"mark":{"type":"circle","size":100,"tooltip":true},"width":400,"background":"white","height":300,"data":{"url":"year_2024.week_4.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
 </div>
 <p>This reveals an interesting relationship between region and education scores. The North West has the highest education scores at all levels of income deprivation.</p>
 </section>
@@ -1475,7 +1480,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:HEIGHT</span> <span class="dv">100</span>}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
-<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"town_size","type":"nominal"},"color":{"field":"coastal_type","type":"nominal"},"x":{"field":"education_score","type":"quantitative","aggregate":"mean"}},"mark":{"type":"circle","size":100,"tooltip":true},"width":400,"background":"floralwhite","height":100,"data":{"url":"year_2024.week_4.analysis_files\/3.csv","format":{"type":"csv"}}});</script>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"town_size","type":"nominal"},"color":{"field":"coastal_type","type":"nominal"},"x":{"field":"education_score","type":"quantitative","aggregate":"mean"}},"mark":{"type":"circle","size":100,"tooltip":true},"width":400,"background":"white","height":100,"data":{"url":"year_2024.week_4.analysis_files\/3.csv","format":{"type":"csv"}}});</script>
 </div>
 <p>This reveals in interesting relationship between the proximity of a town to the coast and education scores. For whatever reason, inland towns have better educational attainment.</p>
 </section>
@@ -1646,7 +1651,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a>                    <span class="at">:MSIZE</span> <span class="dv">100</span>})))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
-<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"value","type":"quantitative"},"color":{"field":"income_flag","type":"nominal"},"x":{"field":"gap","type":"nominal"}},"mark":{"type":"circle","size":100,"tooltip":true},"width":400,"background":"floralwhite","height":300,"data":{"url":"year_2024.week_4.analysis_files\/4.csv","format":{"type":"csv"}}});</script>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"value","type":"quantitative"},"color":{"field":"income_flag","type":"nominal"},"x":{"field":"gap","type":"nominal"}},"mark":{"type":"circle","size":100,"tooltip":true},"width":400,"background":"white","height":300,"data":{"url":"year_2024.week_4.analysis_files\/4.csv","format":{"type":"csv"}}});</script>
 </div>
 <p>This could be tidied up a bit with nicer names and colours, but this is the idea. I think the main takeaway from this graph is that data should be tidy for the sake of visualizing it, and that naming columns is important.</p>
 </section>
@@ -2281,12 +2286,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a 3="" href="./year_2024.week_3.analysis.html" class="pagination-link  aria-label=" &lt;span="" -="" us="" polling="" places="" 2012-2020&lt;="" span&gt;"="">
+      <a href="./year_2024.week_3.analysis.html" class="pagination-link" aria-label="Week 3 - US Polling Places 2012-2020">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Week 3 - US Polling Places 2012-2020</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./year_2024.week_5.analysis.html" class="pagination-link" aria-label="<span class='chapter-number'>6</span>&nbsp; <span class='chapter-title'>Week 5 - Groundhog Predictions</span>">
+      <a href="./year_2024.week_5.analysis.html" class="pagination-link" aria-label="Week 5 - Groundhog Predictions">
         <span class="nav-page-text"><span class="chapter-title">Week 5 - Groundhog Predictions</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -64,6 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./year_2024.week_6.analysis.html" rel="next">
 <link href="./year_2024.week_4.analysis.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -176,6 +177,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <a href="./year_2024.week_5.analysis.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Week 5 - Groundhog Predictions</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./year_2024.week_6.analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">A Few World Heritage Sites</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -274,7 +280,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:YTITLE</span> <span class="st">"Number of groundhogs debuting in this year"</span>}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
-<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"new-groundhogs","type":"quantitative","axis":{"title":"Number of groundhogs debuting in this year"}},"x":{"field":"first-year","type":"temporal","axis":{"title":"Year"}}},"mark":{"type":"line","tooltip":true},"width":400,"background":"floralwhite","height":300,"data":{"url":"year_2024.week_5.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"new-groundhogs","type":"quantitative","axis":{"title":"Number of groundhogs debuting in this year"}},"x":{"field":"first-year","type":"temporal","axis":{"title":"Year"}}},"mark":{"type":"line","tooltip":true},"width":400,"background":"white","height":300,"data":{"url":"year_2024.week_5.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
 </div>
 <p>This doesn’t really tell us much. It might be more easy to interpret as a cumulative area chart – with the area showing the cumulative count of groundhogs. One way to do this is directly in vega-lite, with a transform:</p>
 <div class="sourceClojure">
@@ -293,7 +299,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">:op</span> <span class="st">"sum"</span>}]}]}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
-<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"cumulative-count","type":"quantitative","axis":{"title":"Cumulative count of groundhogs"}},"x":{"field":"first-year","type":"temporal","axis":{"title":"Year"}}},"transform":[{"sort":[{"field":"first-year"}],"window":[{"as":"cumulative-count","field":"new-groundhogs","op":"sum"}]}],"mark":{"type":"area","tooltip":true},"width":400,"background":"floralwhite","height":300,"data":{"url":"year_2024.week_5.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"cumulative-count","type":"quantitative","axis":{"title":"Cumulative count of groundhogs"}},"x":{"field":"first-year","type":"temporal","axis":{"title":"Year"}}},"transform":[{"sort":[{"field":"first-year"}],"window":[{"as":"cumulative-count","field":"new-groundhogs","op":"sum"}]}],"mark":{"type":"area","tooltip":true},"width":400,"background":"white","height":300,"data":{"url":"year_2024.week_5.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
 </div>
 <p>But in some cases, for example if the dataset were way bigger or if there were more complicated calculations to do than just summing up a field, we might want to manipulate the data on the JVM side and just send the points to plot to the browser. This is a good chance to demonstrate how to work with rolling windows in tablecloth too, so for the sake of demonstration, that would look like this:</p>
 <div class="sourceClojure">
@@ -308,7 +314,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:Y</span> <span class="at">:cumulative-count</span>}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
-<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"cumulative-count","type":"quantitative"},"x":{"field":"first-year","type":"temporal"}},"mark":{"type":"area","tooltip":true},"width":400,"background":"floralwhite","height":300,"data":{"url":"year_2024.week_5.analysis_files\/1.csv","format":{"type":"csv"}}});</script>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"cumulative-count","type":"quantitative"},"x":{"field":"first-year","type":"temporal"}},"mark":{"type":"area","tooltip":true},"width":400,"background":"white","height":300,"data":{"url":"year_2024.week_5.analysis_files\/1.csv","format":{"type":"csv"}}});</script>
 </div>
 <p>That’s a bit better. It’s obvious from this that groundhog day really took off in the 2010s. We could show this more clearly by plotting the number of new groundhogs per decade:</p>
 <div class="sourceClojure">
@@ -330,7 +336,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:Y</span> <span class="at">:count</span>}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
-<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"count","type":"quantitative"},"x":{"field":"decade","type":"temporal"}},"mark":{"type":"bar","size":15,"tooltip":true},"width":400,"background":"floralwhite","height":300,"data":{"url":"year_2024.week_5.analysis_files\/2.csv","format":{"type":"csv"}}});</script>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"count","type":"quantitative"},"x":{"field":"decade","type":"temporal"}},"mark":{"type":"bar","size":15,"tooltip":true},"width":400,"background":"white","height":300,"data":{"url":"year_2024.week_5.analysis_files\/2.csv","format":{"type":"csv"}}});</script>
 </div>
 <p>Over 30 places got groundhogs reporting on the weather in the 2010s. I wonder what happened then? I’m also curious about where these groundhogs are from.</p>
 </section>
@@ -512,7 +518,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:Y</span> <span class="at">:winter-percent</span>}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
-<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"winter-percent","type":"quantitative"},"x":{"scale":{"zero":false},"field":"latitude","type":"quantitative"}},"mark":{"type":"circle","tooltip":true},"width":400,"background":"floralwhite","height":300,"data":{"url":"year_2024.week_5.analysis_files\/3.csv","format":{"type":"csv"}}});</script>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"winter-percent","type":"quantitative"},"x":{"scale":{"zero":false},"field":"latitude","type":"quantitative"}},"mark":{"type":"circle","tooltip":true},"width":400,"background":"white","height":300,"data":{"url":"year_2024.week_5.analysis_files\/3.csv","format":{"type":"csv"}}});</script>
 </div>
 <p>It doesn’t really look like there’s any relationship here. We can quantify it by computing the correlation coefficient between these two values. This is a simple calculation that’s built right in to <code>tech.ml.dataset</code>, the library underlying tablecloth, so we can pass our columns right into it. We also have to tell it which type of correlation to compute (<code>:pearson</code>, <code>:spearman</code>, and <code>:kendall</code> are supported).</p>
 <div class="sourceClojure">
@@ -1097,11 +1103,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a 4="" href="./year_2024.week_4.analysis.html" class="pagination-link  aria-label=" &lt;span="" -="" educational="" attainment="" of="" young="" people="" in="" english="" towns&lt;="" span&gt;"="">
+      <a href="./year_2024.week_4.analysis.html" class="pagination-link" aria-label="Week 4 - Educational Attainment of Young People in English Towns">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Week 4 - Educational Attainment of Young People in English Towns</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./year_2024.week_6.analysis.html" class="pagination-link" aria-label="A Few World Heritage Sites">
+        <span class="nav-page-text"><span class="chapter-title">A Few World Heritage Sites</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

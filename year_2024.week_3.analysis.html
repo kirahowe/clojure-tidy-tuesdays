@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -175,6 +175,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./year_2024.week_5.analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 5 - Groundhog Predictions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./year_2024.week_6.analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">A Few World Heritage Sites</span></a>
   </div>
 </li>
     </ul>
@@ -382,7 +387,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:COLOR</span> {<span class="at">:field</span> <span class="st">"state"</span> <span class="at">:type</span> <span class="st">"nominal"</span>}}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
-<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"count","type":"quantitative"},"color":{"field":"state","type":"nominal"},"x":{"field":"election_date","type":"temporal"}},"mark":{"type":"line","tooltip":true},"width":400,"background":"floralwhite","height":300,"data":{"url":"year_2024.week_3.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"count","type":"quantitative"},"color":{"field":"state","type":"nominal"},"x":{"field":"election_date","type":"temporal"}},"mark":{"type":"line","tooltip":true},"width":400,"background":"white","height":300,"data":{"url":"year_2024.week_3.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
 </div>
 <p>To make this chart easier to interpret, we’ll change a few things, noted inline below:</p>
 <div class="sourceClojure">
@@ -410,7 +415,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:YSCALE</span> {<span class="at">:type</span> <span class="st">"log"</span>}}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
-<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"scale":{"type":"log"},"field":"count","type":"quantitative"},"color":{"field":"state","type":"nominal","legend":null},"x":{"field":"election_date","type":"temporal"}},"mark":{"type":"line","strokeWidth":4,"opacity":0.5,"tooltip":true},"width":700,"background":"floralwhite","height":300,"data":{"url":"year_2024.week_3.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"scale":{"type":"log"},"field":"count","type":"quantitative"},"color":{"field":"state","type":"nominal","legend":null},"x":{"field":"election_date","type":"temporal"}},"mark":{"type":"line","strokeWidth":4,"opacity":0.5,"tooltip":true},"width":700,"background":"white","height":300,"data":{"url":"year_2024.week_3.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
 </div>
 <p>Even this doesn’t really tell us much, other than that most states saw no change in the overall number of polling places over the years (lots of straight lines!). To get a better idea of how the states compare to each other, we can facet this graph by state.</p>
 </section>
@@ -440,7 +445,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>                  <span class="at">:FACET</span> {<span class="at">:field</span> <span class="at">:state</span> <span class="at">:type</span> <span class="at">:nominal</span> <span class="at">:columns</span> <span class="dv">7</span> <span class="at">:title</span> <span class="st">"State"</span>}}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
-<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"count","type":"quantitative","axis":{"title":"Count","grid":false}},"color":{"field":"state","type":"nominal","legend":false},"facet":{"field":"state","type":"nominal","columns":7,"title":"State"},"x":{"field":"election_date","type":"temporal","axis":{"title":"Year","grid":false}}},"mark":{"type":"line","tooltip":true},"width":80,"background":"floralwhite","height":50,"data":{"url":"year_2024.week_3.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"count","type":"quantitative","axis":{"title":"Count","grid":false}},"color":{"field":"state","type":"nominal","legend":false},"facet":{"field":"state","type":"nominal","columns":7,"title":"State"},"x":{"field":"election_date","type":"temporal","axis":{"title":"Year","grid":false}}},"mark":{"type":"line","tooltip":true},"width":80,"background":"white","height":50,"data":{"url":"year_2024.week_3.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
 </div>
 <p>This is still not super informative (IMO), but better. We can at least clearly see the outliers that did see some change over time, i.e.&nbsp;AR, MD, MN. It also reveals states that have no or little data.</p>
 </section>
@@ -656,7 +661,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>                                             <span class="at">:format</span> <span class="st">".1%"</span>}}}]}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
-<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"state","type":"nominal","axis":{"title":"State"},"sort":"-x"},"x":{"field":"difference","type":"quantitative","axis":{"domain":false,"format":"1%","title":"Change in polling place count 2012-2020"}}},"width":400,"background":"floralwhite","layer":[{"mark":"bar"},{"mark":{"type":"text","align":{"expr":"datum.difference < 0 ? 'right' : 'left'"},"dx":{"expr":"datum.difference < 0 ? -2 : 2"}},"encoding":{"text":{"field":"difference","format":".1%"}}}],"height":300,"data":{"url":"year_2024.week_3.analysis_files\/1.csv","format":{"type":"csv"}}});</script>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"state","type":"nominal","axis":{"title":"State"},"sort":"-x"},"x":{"field":"difference","type":"quantitative","axis":{"domain":false,"format":"1%","title":"Change in polling place count 2012-2020"}}},"width":400,"background":"white","layer":[{"mark":"bar"},{"mark":{"type":"text","align":{"expr":"datum.difference < 0 ? 'right' : 'left'"},"dx":{"expr":"datum.difference < 0 ? -2 : 2"}},"encoding":{"text":{"field":"difference","format":".1%"}}}],"height":300,"data":{"url":"year_2024.week_3.analysis_files\/1.csv","format":{"type":"csv"}}});</script>
 </div>
 <p>There we have it! An interesting investigation of some data on polling places. See you next week :)</p>
 <div style="background-color:grey;height:2px;width:100%;">
@@ -1203,12 +1208,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a 2="" href="./year_2024.week_2.analysis.html" class="pagination-link  aria-label=" &lt;span="" -="" canadian="" nhl="" hockey="" player="" birth="" months&lt;="" span&gt;"="">
+      <a href="./year_2024.week_2.analysis.html" class="pagination-link" aria-label="Week 2 - Canadian NHL Hockey Player Birth Months">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Week 2 - Canadian NHL Hockey Player Birth Months</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./year_2024.week_4.analysis.html" class="pagination-link" aria-label="<span class='chapter-number'>5</span>&nbsp; <span class='chapter-title'>Week 4 - Educational Attainment of Young People in English Towns</span>">
+      <a href="./year_2024.week_4.analysis.html" class="pagination-link" aria-label="Week 4 - Educational Attainment of Young People in English Towns">
         <span class="nav-page-text"><span class="chapter-title">Week 4 - Educational Attainment of Young People in English Towns</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -206,6 +206,11 @@ window.Quarto = {
   <a href="./year_2024.week_5.analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Week 5 - Groundhog Predictions</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./year_2024.week_6.analysis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">A Few World Heritage Sites</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -385,7 +390,7 @@ window.Quarto = {
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>                           <span class="at">:encoding</span> {<span class="at">:text</span> {<span class="at">:field</span> <span class="at">:country-pct</span> <span class="at">:format</span> <span class="st">".1%"</span>}}}]}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
-<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"month","type":"nominal","axis":{"title":"Month"},"sort":["1","2","3","4","5","6","7","8","9","10","11","12"]},"x":{"field":"country-births","type":"quantitative","axis":{"title":"Number of births (cumulatively)"}}},"width":400,"background":"floralwhite","title":{"text":"Canadian births by month 1991-2022"},"layer":[{"mark":"bar"},{"mark":{"type":"text","align":"left","dx":3},"encoding":{"text":{"field":"country-pct","format":".1%"}}}],"height":300,"data":{"url":"year_2024.week_2.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"month","type":"nominal","axis":{"title":"Month"},"sort":["1","2","3","4","5","6","7","8","9","10","11","12"]},"x":{"field":"country-births","type":"quantitative","axis":{"title":"Number of births (cumulatively)"}}},"width":400,"background":"white","title":{"text":"Canadian births by month 1991-2022"},"layer":[{"mark":"bar"},{"mark":{"type":"text","align":"left","dx":3},"encoding":{"text":{"field":"country-pct","format":".1%"}}}],"height":300,"data":{"url":"year_2024.week_2.analysis_files\/0.csv","format":{"type":"csv"}}});</script>
 </div>
 <p>So now we can see the distribution of births in Canada by month between 1991 and 2022. It actually looks like Canadians are less likely to be born in the earlier months of the year, with the most births in May, July, August, and September. We can compare this to the expected distribution (if each day had an exactly equal chance of being someone’s birthday) by first constructing a dataset of the “expected” monthly distributions:</p>
 <div class="sourceClojure">
@@ -570,7 +575,7 @@ window.Quarto = {
 <span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">:format</span> <span class="st">".1%"</span>}}}]})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div>
-<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"birth-month","type":"nominal","axis":{"title":"Month"},"sort":["JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE","JULY","AUGUST","SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER"]},"x":{"field":"births","type":"quantitative","axis":{"title":"Number of births"}}},"width":400,"background":"floralwhite","title":{"text":"NHL player births by month"},"layer":[{"mark":"bar"},{"mark":{"type":"text","align":"left","dx":3},"encoding":{"text":{"field":"player-pct","format":".1%"}}}],"height":300,"data":{"url":"year_2024.week_2.analysis_files\/1.csv","format":{"type":"csv"}}});</script>
+<script>vegaEmbed(document.currentScript.parentElement, {"encoding":{"y":{"field":"birth-month","type":"nominal","axis":{"title":"Month"},"sort":["JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE","JULY","AUGUST","SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER"]},"x":{"field":"births","type":"quantitative","axis":{"title":"Number of births"}}},"width":400,"background":"white","title":{"text":"NHL player births by month"},"layer":[{"mark":"bar"},{"mark":{"type":"text","align":"left","dx":3},"encoding":{"text":{"field":"player-pct","format":".1%"}}}],"height":300,"data":{"url":"year_2024.week_2.analysis_files\/1.csv","format":{"type":"csv"}}});</script>
 </div>
 <p>These are definitely more distributed disproportionately through the early months of the year. We can compare them on top of each other to see more clearly next.</p>
 </section>
@@ -1332,12 +1337,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a 1="" href="./year_2024.week_1.analysis.html" class="pagination-link  aria-label=" &lt;span="" -="" holiday="" movies&lt;="" span&gt;"="">
+      <a href="./year_2024.week_1.analysis.html" class="pagination-link" aria-label="Week 1 - Holiday Movies">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Week 1 - Holiday Movies</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./year_2024.week_3.analysis.html" class="pagination-link" aria-label="<span class='chapter-number'>4</span>&nbsp; <span class='chapter-title'>Week 3 - US Polling Places 2012-2020</span>">
+      <a href="./year_2024.week_3.analysis.html" class="pagination-link" aria-label="Week 3 - US Polling Places 2012-2020">
         <span class="nav-page-text"><span class="chapter-title">Week 3 - US Polling Places 2012-2020</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
