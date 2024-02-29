@@ -21,7 +21,9 @@
                   "year_2024/week_2/analysis.clj"
                   "year_2024/week_3/analysis.clj"
                   "year_2024/week_4/analysis.clj"
-                  "year_2024/week_5/analysis.clj"]}))
+                  "year_2024/week_5/analysis.clj"
+                  "year_2024/week_6/analysis.clj"
+                  "year_2024/week_7/analysis.clj"]}))
 
 (defn build-cli [_]
   (build)
