@@ -7,5 +7,6 @@
         com.cnuernber/charred {:mvn/version "1.033"}
         generateme/fastmath {:mvn/version "2.3.0"}
         clj-http/clj-http {:mvn/version "3.12.3"}
+        org.clj-commons/hickory {:mvn/version "0.7.4"}
         org.dhatim/fastexcel-reader  {:mvn/version "0.12.8"
                                       :exclusions [org.apache.poi/poi-ooxml]}}}
